@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qore-X - 账单</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Microsoft YaHei', sans-serif; background: #f8fafc; min-height: 100vh; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; color: white; font-size: 20px; font-weight: bold; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .page-title { font-size: 24px; font-weight: bold; color: #1e293b; margin-bottom: 30px; }
+        .card { background: white; border-radius: 16px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .card-title { font-size: 18px; font-weight: bold; color: #1e293b; margin-bottom: 20px; }
+        .bill-item { padding: 15px; background: #f8fafc; border-radius: 8px; margin-bottom: 15px; }
+        .bill-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        .bill-period { font-size: 14px; font-weight: 600; color: #374151; }
+        .bill-status { padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+        .bill-status.paid { background: #d1fae5; color: #065f46; }
+        .bill-status.unpaid { background: #fef3c7; color: #92400e; }
+        .bill-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 13px; color: #6b7280; }
+        .bill-total { margin-top: 10px; padding-top: 10px; border-top: 1px solid #e5e7eb; font-size: 14px; font-weight: 600; color: #1e293b; }
+        .pay-btn { padding: 8px 16px; background: #1296db; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; float: right; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><span>🚀</span><span>Qore-X</span></div>
+    </div>
+    <div class="container">
+        <div class="page-title">📄 我的账单</div>
+        <div class="card">
+            <div class="card-title">2026 年 4 月账单</div>
+            <div class="bill-item">
+                <div class="bill-header">
+                    <div class="bill-period">月费 - 专业版</div>
+                    <div class="bill-status paid">✅ 已支付</div>
+                </div>
+                <div class="bill-details">
+                    <div>周期：2026-04-01 ~ 2026-04-30</div>
+                    <div>金额：68 USDT</div>
+                    <div>支付时间：04-01 10:00</div>
+                </div>
+            </div>
+            <div class="bill-item">
+                <div class="bill-header">
+                    <div class="bill-period">利润分成 - 3 月</div>
+                    <div class="bill-status paid">✅ 已支付</div>
+                </div>
+                <div class="bill-details">
+                    <div>周期：2026-03-01 ~ 2026-03-31</div>
+                    <div>利润：500 USDT</div>
+                    <div>分成：150 USDT (30%)</div>
+                </div>
+                <div class="bill-total">总计：150 USDT</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">2026 年 3 月账单</div>
+            <div class="bill-item">
+                <div class="bill-header">
+                    <div class="bill-period">月费 - 专业版</div>
+                    <div class="bill-status paid">✅ 已支付</div>
+                </div>
+                <div class="bill-details">
+                    <div>周期：2026-03-01 ~ 2026-03-31</div>
+                    <div>金额：68 USDT</div>
+                    <div>支付时间：03-01 10:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

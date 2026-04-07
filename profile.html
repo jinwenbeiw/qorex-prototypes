@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qore-X - 我的</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Microsoft YaHei', sans-serif; background: #f8fafc; min-height: 100vh; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; color: white; font-size: 20px; font-weight: bold; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .profile-header { background: white; border-radius: 16px; padding: 30px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
+        .avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #1296db 0%, #0f7fb8 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; margin: 0 auto 15px; }
+        .username { font-size: 20px; font-weight: bold; color: #1e293b; margin-bottom: 5px; }
+        .email { font-size: 14px; color: #64748b; }
+        .card { background: white; border-radius: 16px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .card-title { font-size: 18px; font-weight: bold; color: #1e293b; margin-bottom: 20px; }
+        .menu-item { padding: 15px; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: all 0.3s; }
+        .menu-item:hover { background: #f9fafb; }
+        .menu-item:last-child { border-bottom: none; }
+        .menu-label { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #374151; }
+        .menu-icon { font-size: 18px; }
+        .menu-arrow { color: #9ca3af; }
+        .badge { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+        .logout-btn { width: 100%; padding: 14px; background: #fee2e2; color: #991b1b; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .logout-btn:hover { background: #fecaca; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><span>🚀</span><span>Qore-X</span></div>
+    </div>
+    <div class="container">
+        <div class="profile-header">
+            <div class="avatar">👤</div>
+            <div class="username">demo@qorex.com</div>
+            <div class="email">ID: 10086</div>
+        </div>
+        <div class="card">
+            <div class="card-title">账户安全</div>
+            <div class="menu-item">
+                <div class="menu-label"><span class="menu-icon">🔒</span>修改密码</div>
+                <span class="menu-arrow">›</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-label"><span class="menu-icon">📧</span>绑定邮箱 <span class="badge">已验证</span></div>
+                <span class="menu-arrow">›</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-label"><span class="menu-icon">📱</span>手机验证</div>
+                <span class="menu-arrow">›</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">我的订阅</div>
+            <div class="menu-item">
+                <div class="menu-label"><span class="menu-icon">💰</span>月费专业版</div>
+                <span style="font-size: 13px; color: #64748b;">到期：2026-05-01 ›</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-label"><span class="menu-icon">📄</span>账单记录</div>
+                <span class="menu-arrow">›</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">其他</div>
+            <div class="menu-item">
+                <div class="menu-label"><span class="menu-icon">📖</span>使用教程</div>
+                <span class="menu-arrow">›</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-label"><span class="menu-icon">💬</span>联系客服</div>
+                <span class="badge">7x24</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-label"><span class="menu-icon">⚙️</span>设置</div>
+                <span class="menu-arrow">›</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-label"><span class="menu-icon">📜</span>服务条款</div>
+                <span class="menu-arrow">›</span>
+            </div>
+        </div>
+        <button class="logout-btn">退出登录</button>
+    </div>
+</body>
+</html>
