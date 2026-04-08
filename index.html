@@ -3,79 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qorex Prototypes</title>
+    <title>Qorex - 登录</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 40px 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        h1 { color: white; text-align: center; margin-bottom: 40px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 12px; padding: 24px; text-decoration: none; color: #333; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-        .card h3 { color: #667eea; margin-bottom: 8px; font-size: 1.3em; }
-        .card p { color: #666; font-size: 0.9em; line-height: 1.5; }
-        .icon { font-size: 2em; margin-bottom: 12px; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: linear-gradient(180deg, #6B73FF 0%, #000DFF 100%); 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px 20px;
+        }
+        .logo { 
+            text-align: center; 
+            margin-bottom: 40px; 
+            color: white;
+        }
+        .logo h1 { 
+            font-size: 2.5em; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 12px;
+        }
+        .logo .rocket { font-size: 1.2em; }
+        .login-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 24px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+        .login-card h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #6B73FF;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 115, 255, 0.4);
+        }
+        .links {
+            margin-top: 24px;
+            text-align: center;
+        }
+        .links a {
+            color: #6B73FF;
+            text-decoration: none;
+            font-size: 0.95em;
+            margin: 0 12px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🚀 Qorex Prototypes</h1>
-        <div class="grid">
-            <a href="login.html" class="card">
-                <div class="icon">🔐</div>
-                <h3>登录</h3>
-                <p>用户登录页面</p>
-            </a>
-            <a href="register.html" class="card">
-                <div class="icon">📝</div>
-                <h3>注册</h3>
-                <p>新用户注册页面</p>
-            </a>
-            <a href="verify.html" class="card">
-                <div class="icon">✅</div>
-                <h3>身份验证</h3>
-                <p>KYC 验证流程</p>
-            </a>
-            <a href="dashboard.html" class="card">
-                <div class="icon">📊</div>
-                <h3>仪表盘</h3>
-                <p>用户主界面</p>
-            </a>
-            <a href="api-keys.html" class="card">
-                <div class="icon">🔑</div>
-                <h3>API 密钥</h3>
-                <p>交易所 API 管理</p>
-            </a>
-            <a href="trades.html" class="card">
-                <div class="icon">📈</div>
-                <h3>交易</h3>
-                <p>交易记录和持仓</p>
-            </a>
-            <a href="bills.html" class="card">
-                <div class="icon">📄</div>
-                <h3>账单</h3>
-                <p>账单和费用明细</p>
-            </a>
-            <a href="withdraw.html" class="card">
-                <div class="icon">💰</div>
-                <h3>提现</h3>
-                <p>资金提现页面</p>
-            </a>
-            <a href="profile.html" class="card">
-                <div class="icon">👤</div>
-                <h3>个人资料</h3>
-                <p>用户信息设置</p>
-            </a>
-            <a href="referral.html" class="card">
-                <div class="icon">🎁</div>
-                <h3>推荐</h3>
-                <p>推荐奖励计划</p>
-            </a>
-            <a href="subscribe.html" class="card">
-                <div class="icon">💎</div>
-                <h3>订阅</h3>
-                <p>会员订阅方案</p>
-            </a>
+    <div class="logo">
+        <h1><span class="rocket">🚀</span> Qorex</h1>
+    </div>
+    
+    <div class="login-card">
+        <h2>欢迎回来</h2>
+        <form action="dashboard.html">
+            <div class="input-group">
+                <label>邮箱 / 手机号</label>
+                <input type="text" placeholder="请输入邮箱或手机号" value="demo@qorex.com">
+            </div>
+            <div class="input-group">
+                <label>密码</label>
+                <input type="password" placeholder="请输入密码" value="123456">
+            </div>
+            <button type="submit" class="login-btn">登录</button>
+        </form>
+        <div class="links">
+            <a href="register.html">注册新账号</a>
+            <a href="verify.html">忘记密码？</a>
         </div>
     </div>
 </body>
