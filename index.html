@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qorex Prototypes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: white; text-align: center; margin-bottom: 40px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 12px; padding: 24px; text-decoration: none; color: #333; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .card h3 { color: #667eea; margin-bottom: 8px; font-size: 1.3em; }
+        .card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        .icon { font-size: 2em; margin-bottom: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Qorex Prototypes</h1>
+        <div class="grid">
+            <a href="login.html" class="card">
+                <div class="icon">🔐</div>
+                <h3>登录</h3>
+                <p>用户登录页面</p>
+            </a>
+            <a href="register.html" class="card">
+                <div class="icon">📝</div>
+                <h3>注册</h3>
+                <p>新用户注册页面</p>
+            </a>
+            <a href="verify.html" class="card">
+                <div class="icon">✅</div>
+                <h3>身份验证</h3>
+                <p>KYC 验证流程</p>
+            </a>
+            <a href="dashboard.html" class="card">
+                <div class="icon">📊</div>
+                <h3>仪表盘</h3>
+                <p>用户主界面</p>
+            </a>
+            <a href="api-keys.html" class="card">
+                <div class="icon">🔑</div>
+                <h3>API 密钥</h3>
+                <p>交易所 API 管理</p>
+            </a>
+            <a href="trades.html" class="card">
+                <div class="icon">📈</div>
+                <h3>交易</h3>
+                <p>交易记录和持仓</p>
+            </a>
+            <a href="bills.html" class="card">
+                <div class="icon">📄</div>
+                <h3>账单</h3>
+                <p>账单和费用明细</p>
+            </a>
+            <a href="withdraw.html" class="card">
+                <div class="icon">💰</div>
+                <h3>提现</h3>
+                <p>资金提现页面</p>
+            </a>
+            <a href="profile.html" class="card">
+                <div class="icon">👤</div>
+                <h3>个人资料</h3>
+                <p>用户信息设置</p>
+            </a>
+            <a href="referral.html" class="card">
+                <div class="icon">🎁</div>
+                <h3>推荐</h3>
+                <p>推荐奖励计划</p>
+            </a>
+            <a href="subscribe.html" class="card">
+                <div class="icon">💎</div>
+                <h3>订阅</h3>
+                <p>会员订阅方案</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
