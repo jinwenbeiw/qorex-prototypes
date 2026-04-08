@@ -2,112 +2,129 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人资料 - Qorex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>我的 - Qorex</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app-container">
+        <!-- 顶部导航 -->
         <header class="app-header">
             <div class="header-left">
-                <a href="dashboard.html" class="app-logo">
-                    <span class="logo-icon-sm">🚀</span>
-                    <span>Qorex</span>
-                </a>
-                <nav class="main-nav">
-                    <a href="dashboard.html" class="nav-item">📊 首页</a>
-                    <a href="bills.html" class="nav-item">💰 收益</a>
-                    <a href="trades.html" class="nav-item">📈 交易</a>
-                    <a href="profile.html" class="nav-item active">👤 我的</a>
-                </nav>
-            </div>
-            <div class="header-right">
-                <button class="icon-btn">🔔</button>
-                <div class="user-menu">
-                    <div class="user-avatar">D</div>
-                    <span>demo@qorex.com</span>
-                </div>
+                <span class="page-title">我的</span>
             </div>
         </header>
 
+        <!-- 主内容 -->
         <main class="app-main">
-            <div class="page-header">
-                <h1 class="page-title">个人资料</h1>
-                <p class="page-subtitle">管理您的账户信息和安全设置</p>
+            <!-- 用户信息卡片 -->
+            <div class="profile-header-card">
+                <div class="user-avatar-large">D</div>
+                <div class="user-info">
+                    <div class="user-name">DemoUser</div>
+                    <div class="user-email">demo@qorex.com</div>
+                </div>
+                <button class="edit-btn" onclick="location.href='edit-profile.html'">编辑</button>
             </div>
 
-            <div style="display: grid; grid-template-columns: 240px 1fr; gap: 24px;">
-                <!-- 侧边菜单 -->
-                <div class="card" style="height: fit-content;">
-                    <nav style="display: flex; flex-direction: column; gap: 4px;">
-                        <a href="#" class="nav-item active" style="justify-content: flex-start;">👤 基本信息</a>
-                        <a href="#" class="nav-item" style="justify-content: flex-start;">🔒 安全设置</a>
-                        <a href="#" class="nav-item" style="justify-content: flex-start;">📱 绑定手机</a>
-                        <a href="#" class="nav-item" style="justify-content: flex-start;">📧 绑定邮箱</a>
-                        <a href="#" class="nav-item" style="justify-content: flex-start;">🔑 API 管理</a>
-                        <a href="#" class="nav-item" style="justify-content: flex-start;">📊 操作日志</a>
-                    </nav>
+            <!-- 账户统计 -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">89</div>
+                    <div class="stat-label">交易天数</div>
                 </div>
-
-                <!-- 主内容 -->
-                <div>
-                    <div class="card" style="margin-bottom: 24px;">
-                        <div class="card-header">
-                            <h3 class="card-title">基本信息</h3>
-                            <button class="btn btn-primary btn-sm">保存修改</button>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 24px;">
-                            <div class="user-avatar" style="width: 80px; height: 80px; font-size: 2em;">D</div>
-                            <div>
-                                <button class="btn btn-outline btn-sm">更换头像</button>
-                            </div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div class="form-group">
-                                <label>用户名</label>
-                                <input type="text" class="form-control" value="DemoUser">
-                            </div>
-                            <div class="form-group">
-                                <label>邮箱</label>
-                                <input type="email" class="form-control" value="demo@qorex.com" disabled style="background: var(--bg-light);">
-                            </div>
-                            <div class="form-group">
-                                <label>手机号</label>
-                                <input type="tel" class="form-control" value="+86 138****8888">
-                            </div>
-                            <div class="form-group">
-                                <label>时区</label>
-                                <select class="form-control">
-                                    <option>Asia/Shanghai (UTC+8)</option>
-                                    <option>America/New_York (UTC-5)</option>
-                                    <option>Europe/London (UTC+0)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">账户统计</h3>
-                        </div>
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                            <div style="text-align: center; padding: 20px; background: var(--bg-light); border-radius: 8px;">
-                                <div style="font-size: 2em; font-weight: 700; color: var(--primary);">89</div>
-                                <div style="color: var(--text-gray); margin-top: 4px;">交易天数</div>
-                            </div>
-                            <div style="text-align: center; padding: 20px; background: var(--bg-light); border-radius: 8px;">
-                                <div style="font-size: 2em; font-weight: 700; color: var(--success);">156</div>
-                                <div style="color: var(--text-gray); margin-top: 4px;">总交易次数</div>
-                            </div>
-                            <div style="text-align: center; padding: 20px; background: var(--bg-light); border-radius: 8px;">
-                                <div style="font-size: 2em; font-weight: 700; color: var(--warning);">68.5%</div>
-                                <div style="color: var(--text-gray); margin-top: 4px;">胜率</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-value">156</div>
+                    <div class="stat-label">总交易次数</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-value">68.5%</div>
+                    <div class="stat-label">胜率</div>
                 </div>
             </div>
+
+            <!-- 功能列表 -->
+            <div class="menu-list">
+                <div class="menu-section">账户管理</div>
+                
+                <div class="menu-item" onclick="location.href='security.html'">
+                    <span class="menu-icon">🔒</span>
+                    <span class="menu-text">安全设置</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" onclick="location.href='bind-phone.html'">
+                    <span class="menu-icon">📱</span>
+                    <span class="menu-text">绑定手机</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" onclick="location.href='bind-email.html'">
+                    <span class="menu-icon">📧</span>
+                    <span class="menu-text">绑定邮箱</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" onclick="location.href='api-keys.html'">
+                    <span class="menu-icon">🔑</span>
+                    <span class="menu-text">API 管理</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" onclick="location.href='logs.html'">
+                    <span class="menu-icon">📝</span>
+                    <span class="menu-text">操作日志</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+            </div>
+
+            <div class="menu-list">
+                <div class="menu-section">其他</div>
+                
+                <div class="menu-item" onclick="location.href='about.html'">
+                    <span class="menu-icon">🏢</span>
+                    <span class="menu-text">关于我们</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" onclick="location.href='help.html'">
+                    <span class="menu-icon">❓</span>
+                    <span class="menu-text">帮助中心</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+                
+                <div class="menu-item" onclick="location.href='settings.html'">
+                    <span class="menu-icon">⚙️</span>
+                    <span class="menu-text">设置</span>
+                    <span class="menu-arrow">›</span>
+                </div>
+            </div>
+
+            <!-- 退出登录 -->
+            <button class="logout-btn" onclick="location.href='index.html'">退出登录</button>
         </main>
+
+        <!-- 底部导航 -->
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">🏠</span>
+                <span class="bottom-nav-text">首页</span>
+            </a>
+            <a href="revenue.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">💰</span>
+                <span class="bottom-nav-text">收益</span>
+            </a>
+            <a href="robot.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">🤖</span>
+                <span class="bottom-nav-text">机器人</span>
+            </a>
+            <a href="profile.html" class="bottom-nav-item active">
+                <span class="bottom-nav-icon">👤</span>
+                <span class="bottom-nav-text">我的</span>
+            </a>
+        </nav>
     </div>
 </body>
 </html>

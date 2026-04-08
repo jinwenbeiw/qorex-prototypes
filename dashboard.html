@@ -7,192 +7,124 @@
     <meta name="description" content="Qorex 智能量化交易平台 - 让数据决策，让概率说话">
     <meta name="theme-color" content="#409EFF">
     <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <div class="app-container">
         <!-- 顶部导航 -->
-        <header class="app-header" style="background: linear-gradient(135deg, #409EFF 0%, #008AFF 100%);">
+        <header class="app-header">
             <div class="header-left">
-                <a href="dashboard.html" class="app-logo">
-                    <span class="logo-icon-sm">🚀</span>
-                    <span>Qorex</span>
-                </a>
+                <span class="logo">🚀 Qorex</span>
             </div>
             <div class="header-right">
-                <button class="icon-btn" onclick="location.href='message.html'">💬</button>
                 <button class="icon-btn" onclick="location.href='notification.html'">🔔</button>
-                <div class="user-menu lang-switcher" onclick="toggleLangDropdown()">
-                    <div class="user-avatar" style="background: white; color: #409EFF;">D</div>
-                    <span id="userEmail">demo@qorex.com</span>
-                    <span style="font-size: 0.8em;">▼</span>
-                    <div class="lang-dropdown" id="langDropdown">
-                        <a href="#" class="lang-option active" onclick="setLang('zh-CN')">简体中文</a>
-                        <a href="#" class="lang-option" onclick="setLang('zh-TW')">繁體中文</a>
-                        <a href="#" class="lang-option" onclick="setLang('en-US')">English</a>
-                        <a href="#" class="lang-option" onclick="setLang('ja-JP')">日本語</a>
-                        <a href="#" class="lang-option" onclick="setLang('ko-KR')">한국어</a>
-                    </div>
-                </div>
             </div>
         </header>
 
         <!-- 主内容 -->
-        <main class="app-main" style="background: #F5F7FA;">
-            <!-- 收益卡片 -->
-            <div class="revenue-card">
+        <main class="app-main">
+            <!-- 收益卡片（缩小版） -->
+            <div class="revenue-card compact">
                 <div class="revenue-header">
-                    <span class="revenue-title" data-i18n="home.slogan">让数据决策，让概率说话</span>
-                    <span class="risk-status">
-                        <span data-i18n="home.riskStatus">风控状态</span>：
-                        <strong style="color: #10B981;" data-i18n="home.normal">正常</strong>
-                    </span>
-                </div>
-                <div class="revenue-content">
-                    <div class="revenue-left">
-                        <div class="revenue-label" data-i18n="home.todayRevenue">今日收益</div>
+                    <div>
+                        <div class="revenue-label">今日收益</div>
                         <div class="revenue-value">
                             <span class="amount">1,234.56</span>
                             <span class="unit">USDT</span>
                         </div>
                         <div class="revenue-rate">
-                            <span class="rate-value" style="color: #EF4444;">+12.8%</span>
-                        </div>
-                        <div class="revenue-history">
-                            <div class="history-item">
-                                <span class="history-label" data-i18n="home.historicalRevenue">历史总收益</span>
-                                <span class="history-value">8,923.45 USDT</span>
-                            </div>
-                            <div class="history-item">
-                                <span class="history-label" data-i18n="home.historicalRate">历史收益率</span>
-                                <span class="history-value">+89.2%</span>
-                            </div>
+                            <span class="rate-value positive">+12.8%</span>
                         </div>
                     </div>
-                    <div class="revenue-chart">
-                        <div class="chart-placeholder">
-                            <div style="display: flex; align-items: flex-end; gap: 8px; height: 120px;">
-                                <div style="width: 12px; height: 40px; background: rgba(64, 158, 255, 0.3); border-radius: 4px;"></div>
-                                <div style="width: 12px; height: 60px; background: rgba(64, 158, 255, 0.4); border-radius: 4px;"></div>
-                                <div style="width: 12px; height: 45px; background: rgba(64, 158, 255, 0.5); border-radius: 4px;"></div>
-                                <div style="width: 12px; height: 80px; background: rgba(64, 158, 255, 0.6); border-radius: 4px;"></div>
-                                <div style="width: 12px; height: 65px; background: rgba(64, 158, 255, 0.7); border-radius: 4px;"></div>
-                                <div style="width: 12px; height: 90px; background: rgba(64, 158, 255, 0.8); border-radius: 4px;"></div>
-                                <div style="width: 12px; height: 100px; background: #409EFF; border-radius: 4px;"></div>
-                            </div>
-                        </div>
+                    <div class="revenue-status">
+                        <span class="status-badge">风控正常</span>
                     </div>
                 </div>
             </div>
-
-            <!-- 轮播图 -->
-            <div class="swiper-container" data-swiper='[
-                {
-                    "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='750' height='360'%3E%3Crect fill='%23409EFF' width='750' height='360'/%3E%3Ctext x='50%25' y='45%25' font-size='48' fill='white' text-anchor='middle'%3E🎉%3C/text%3E%3Ctext x='50%25' y='60%25' font-size='32' fill='white' text-anchor='middle'%3E新用户专享%3C/text%3E%3Ctext x='50%25' y='70%25' font-size='24' fill='white' text-anchor='middle'%3E注册即送 100 USDT%3C/text%3E%3C/svg%3E",
-                    "title": "新用户专享",
-                    "subtitle": "注册即送 100 USDT 体验金",
-                    "link": "register.html"
-                },
-                {
-                    "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='750' height='360'%3E%3Crect fill='%2310B981' width='750' height='360'/%3E%3Ctext x='50%25' y='45%25' font-size='48' fill='white' text-anchor='middle'%3E🏆%3C/text%3E%3Ctext x='50%25' y='60%25' font-size='32' fill='white' text-anchor='middle'%3E量化策略大赛%3C/text%3E%3Ctext x='50%25' y='70%25' font-size='24' fill='white' text-anchor='middle'%3E赢取 10,000 USDT 奖金池%3C/text%3E%3C/svg%3E",
-                    "title": "量化策略大赛",
-                    "subtitle": "赢取 10,000 USDT 奖金池",
-                    "link": "activity.html"
-                },
-                {
-                    "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='750' height='360'%3E%3Crect fill='%23F59E0B' width='750' height='360'/%3E%3Ctext x='50%25' y='45%25' font-size='48' fill='white' text-anchor='middle'%3E💰%3C/text%3E%3Ctext x='50%25' y='60%25' font-size='32' fill='white' text-anchor='middle'%3E邀请好友%3C/text%3E%3Ctext x='50%25' y='70%25' font-size='24' fill='white' text-anchor='middle'%3E最高得 500 USDT 奖励%3C/text%3E%3C/svg%3E",
-                    "title": "邀请好友",
-                    "subtitle": "最高得 500 USDT 奖励",
-                    "link": "referral.html"
-                }
-            ]'></div>
 
             <!-- 金刚区导航 -->
             <div class="nav-grid">
                 <a href="revenue.html" class="nav-item">
                     <div class="nav-icon" style="background: linear-gradient(135deg, #409EFF 0%, #008AFF 100%);">💰</div>
-                    <span class="nav-text" data-i18n="nav.revenue">收益中心</span>
+                    <span class="nav-text">收益</span>
                 </a>
                 <a href="robot.html" class="nav-item">
                     <div class="nav-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">🤖</div>
-                    <span class="nav-text" data-i18n="nav.robot">机器人</span>
+                    <span class="nav-text">机器人</span>
                 </a>
                 <a href="api-keys.html" class="nav-item">
                     <div class="nav-icon" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">🔑</div>
-                    <span class="nav-text" data-i18n="nav.api">API 管理</span>
+                    <span class="nav-text">API</span>
                 </a>
                 <a href="trades.html" class="nav-item">
                     <div class="nav-icon" style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);">📈</div>
-                    <span class="nav-text" data-i18n="nav.trade">交易记录</span>
+                    <span class="nav-text">交易</span>
                 </a>
                 <a href="referral.html" class="nav-item">
                     <div class="nav-icon" style="background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);">🎁</div>
-                    <span class="nav-text" data-i18n="nav.referral">邀请奖励</span>
+                    <span class="nav-text">邀请</span>
                 </a>
                 <a href="bills.html" class="nav-item">
                     <div class="nav-icon" style="background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);">📊</div>
-                    <span class="nav-text" data-i18n="nav.bills">账单明细</span>
+                    <span class="nav-text">账单</span>
                 </a>
                 <a href="profile.html" class="nav-item">
                     <div class="nav-icon" style="background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);">👤</div>
-                    <span class="nav-text" data-i18n="nav.profile">个人中心</span>
+                    <span class="nav-text">我的</span>
                 </a>
                 <a href="subscribe.html" class="nav-item">
                     <div class="nav-icon" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">💎</div>
-                    <span class="nav-text" data-i18n="nav.subscribe">会员订阅</span>
+                    <span class="nav-text">订阅</span>
                 </a>
             </div>
 
             <!-- 机器人状态卡片 -->
             <div class="robot-card" onclick="location.href='robot.html'">
                 <div class="robot-header">
-                    <span class="robot-title" data-i18n="home.robotControl">启停机器人</span>
-                    <div class="robot-switch">
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider"></span>
-                        </label>
-                    </div>
+                    <span class="robot-title">机器人状态</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
                 </div>
                 <div class="robot-status">
                     <div class="status-item">
-                        <span class="status-label" data-i18n="home.position">当前仓位</span>
+                        <span class="status-label">状态</span>
+                        <span class="status-value running">运行中</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">仓位</span>
                         <span class="status-value">1.5 BTC</span>
                     </div>
                     <div class="status-item">
-                        <span class="status-label" data-i18n="home.leverage">杠杆倍数</span>
+                        <span class="status-label">杠杆</span>
                         <span class="status-value">3x</span>
                     </div>
                     <div class="status-item">
-                        <span class="status-label" data-i18n="home.riskLevel">风控等级</span>
-                        <span class="status-value" style="color: #F59E0B;">中等风险</span>
-                    </div>
-                    <div class="status-item">
-                        <span class="status-label" data-i18n="home.riskStatus">状态</span>
-                        <span class="status-value" style="color: #10B981;" data-i18n="home.running">运行中</span>
+                        <span class="status-label">风控</span>
+                        <span class="status-value warning">中等</span>
                     </div>
                 </div>
             </div>
 
             <!-- 公告卡片 -->
             <div class="announcement-card">
-                <div class="announcement-title">📢 <span data-i18n="home.announcement">公告</span></div>
+                <div class="announcement-title">📢 公告</div>
                 <div class="announcement-content">
-                    QORE-X.AI 智能量化系统已全面升级，现已支持多策略并行、多因子评分、动态风控与自动托管交易。在近期波动行情中，系统会自动根据保证金等级切换风控模式，稳定执行策略节奏。所有策略均由 AI 主脑实时评分与调度，请保持托管运行，以确保最佳表现。
+                    QORE-X.AI 智能量化系统已全面升级，现已支持多策略并行、多因子评分、动态风控与自动托管交易。
                     <a href="#" class="detail-link">详情</a>
                 </div>
             </div>
 
             <!-- 行情列表 -->
             <div class="market-card">
-                <div class="market-title">📊 <span data-i18n="home.market">实时行情</span></div>
+                <div class="market-title">📊 实时行情</div>
                 <div class="market-list">
                     <div class="market-item">
                         <div class="market-left">
                             <span class="market-icon">₿</span>
                             <div>
                                 <div class="market-symbol">BTC/USDT</div>
-                                <div class="market-cap"><span data-i18n="home.marketCap">市值</span> $823.4B</div>
+                                <div class="market-cap">市值 $823.4B</div>
                             </div>
                         </div>
                         <div class="market-price">
@@ -205,7 +137,7 @@
                             <span class="market-icon" style="background: #627EEA;">Ξ</span>
                             <div>
                                 <div class="market-symbol">ETH/USDT</div>
-                                <div class="market-cap"><span data-i18n="home.marketCap">市值</span> $268.5B</div>
+                                <div class="market-cap">市值 $268.5B</div>
                             </div>
                         </div>
                         <div class="market-price">
@@ -218,7 +150,7 @@
                             <span class="market-icon" style="background: #26A17B;">₮</span>
                             <div>
                                 <div class="market-symbol">USDT</div>
-                                <div class="market-cap"><span data-i18n="home.marketCap">市值</span> $95.2B</div>
+                                <div class="market-cap">市值 $95.2B</div>
                             </div>
                         </div>
                         <div class="market-price">
@@ -234,49 +166,21 @@
         <nav class="bottom-nav">
             <a href="dashboard.html" class="bottom-nav-item active">
                 <span class="bottom-nav-icon">🏠</span>
-                <span class="bottom-nav-text" data-i18n="nav.home">首页</span>
+                <span class="bottom-nav-text">首页</span>
             </a>
             <a href="revenue.html" class="bottom-nav-item">
                 <span class="bottom-nav-icon">💰</span>
-                <span class="bottom-nav-text" data-i18n="nav.revenue">收益</span>
+                <span class="bottom-nav-text">收益</span>
             </a>
             <a href="robot.html" class="bottom-nav-item">
                 <span class="bottom-nav-icon">🤖</span>
-                <span class="bottom-nav-text" data-i18n="nav.robot">机器人</span>
+                <span class="bottom-nav-text">机器人</span>
             </a>
             <a href="profile.html" class="bottom-nav-item">
                 <span class="bottom-nav-icon">👤</span>
-                <span class="bottom-nav-text" data-i18n="nav.profile">我的</span>
+                <span class="bottom-nav-text">我的</span>
             </a>
         </nav>
     </div>
-
-    <!-- 引入脚本 -->
-    <script src="i18n.js"></script>
-    <script src="swiper.js"></script>
-    <script>
-        // 语言切换下拉框
-        function toggleLangDropdown() {
-            document.getElementById('langDropdown').classList.toggle('show');
-        }
-        
-        // 设置语言
-        function setLang(lang) {
-            i18n.setLang(lang);
-            document.getElementById('langDropdown').classList.remove('show');
-            
-            // 更新选中状态
-            document.querySelectorAll('.lang-option').forEach(opt => {
-                opt.classList.toggle('active', opt.textContent.includes(i18n.languages[lang]));
-            });
-        }
-        
-        // 点击外部关闭下拉框
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.lang-switcher')) {
-                document.getElementById('langDropdown').classList.remove('show');
-            }
-        });
-    </script>
 </body>
 </html>

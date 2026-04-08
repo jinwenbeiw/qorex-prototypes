@@ -611,7 +611,7 @@ body {
     font-size: 0.75em;
 }
 
-/* ===== 收益卡片 ===== */
+/* ===== 收益卡片（缩小版） ===== */
 .revenue-card {
     background: linear-gradient(135deg, #409EFF 0%, #008AFF 100%);
     border-radius: 16px;
@@ -621,34 +621,18 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+.revenue-card.compact {
+    padding: 16px;
+}
+
 .revenue-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
-}
-
-.revenue-title {
-    font-size: 0.95em;
-    opacity: 0.9;
-}
-
-.risk-status {
-    font-size: 0.85em;
-    opacity: 0.9;
-}
-
-.revenue-content {
-    display: flex;
-    gap: 20px;
-}
-
-.revenue-left {
-    flex: 1;
 }
 
 .revenue-label {
-    font-size: 0.85em;
+    font-size: 0.8em;
     opacity: 0.9;
     margin-bottom: 8px;
 }
@@ -661,7 +645,7 @@ body {
 }
 
 .revenue-value .amount {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: 700;
 }
 
@@ -671,40 +655,41 @@ body {
 }
 
 .revenue-rate {
-    margin-bottom: 16px;
+    margin-top: 8px;
 }
 
 .rate-value {
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.2);
     padding: 4px 12px;
     border-radius: 20px;
+    
+    &.positive {
+        color: #10B981;
+        background: rgba(16, 185, 129, 0.2);
+    }
+    
+    &.negative {
+        color: #EF4444;
+        background: rgba(239, 68, 68, 0.2);
+    }
 }
 
-.revenue-history {
-    display: flex;
-    gap: 40px;
-}
-
-.history-item {
+.revenue-status {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: flex-end;
+    gap: 8px;
 }
 
-.history-label {
-    font-size: 0.75em;
-    opacity: 0.8;
-}
-
-.history-value {
-    font-size: 0.95em;
+.status-badge {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10B981;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85em;
     font-weight: 600;
-}
-
-.revenue-chart {
-    width: 140px;
 }
 
 /* ===== 金刚区导航 ===== */
@@ -1357,6 +1342,151 @@ input:checked + .slider-large:before {
 /* ===== 页面标题（浅色头部） ===== */
 .page-title {
     font-size: 1.1em;
+    font-weight: 600;
+}
+
+/* ===== 个人资料页面 ===== */
+.profile-header-card {
+    background: linear-gradient(135deg, #409EFF 0%, #008AFF 100%);
+    margin: 24rpx;
+    border-radius: 24rpx;
+    padding: 32rpx;
+    display: flex;
+    align-items: center;
+    gap: 20rpx;
+    color: white;
+}
+
+.user-avatar-large {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    background: white;
+    color: #409EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48rpx;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8rpx;
+}
+
+.user-name {
+    font-size: 36rpx;
+    font-weight: 700;
+}
+
+.user-email {
+    font-size: 26rpx;
+    opacity: 0.9;
+}
+
+.edit-btn {
+    padding: 12rpx 32rpx;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2rpx solid rgba(255, 255, 255, 0.5);
+    border-radius: 32rpx;
+    color: white;
+    font-size: 26rpx;
+    font-weight: 600;
+}
+
+.stats-grid {
+    background: white;
+    margin: 24rpx;
+    border-radius: 24rpx;
+    padding: 32rpx;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.stat-value {
+    font-size: 48rpx;
+    font-weight: 700;
+    color: #409EFF;
+    margin-bottom: 8rpx;
+}
+
+.stat-label {
+    font-size: 24rpx;
+    color: #9CA3AF;
+}
+
+.stat-divider {
+    width: 1rpx;
+    background: #E5E7EB;
+    margin: 0 16rpx;
+}
+
+.menu-list {
+    background: white;
+    margin: 24rpx;
+    border-radius: 24rpx;
+    padding: 0 32rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.menu-section {
+    font-size: 26rpx;
+    color: #9CA3AF;
+    padding: 24rpx 0 16rpx;
+    border-bottom: 1rpx solid #E5E7EB;
+    margin-bottom: 8rpx;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 20rpx;
+    padding: 28rpx 0;
+    border-bottom: 1rpx solid #F3F4F6;
+    cursor: pointer;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-icon {
+    font-size: 40rpx;
+    width: 60rpx;
+}
+
+.menu-text {
+    flex: 1;
+    font-size: 30rpx;
+    color: #1F2937;
+}
+
+.menu-arrow {
+    font-size: 40rpx;
+    color: #D1D5DB;
+}
+
+.logout-btn {
+    width: calc(100% - 48rpx);
+    margin: 24rpx;
+    padding: 28rpx;
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+    border: none;
+    border-radius: 24rpx;
+    color: white;
+    font-size: 32rpx;
     font-weight: 600;
 }
 
