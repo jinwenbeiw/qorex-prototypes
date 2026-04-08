@@ -3,142 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>仪表盘 - Qorex</title>
+    <title>首页 - Qorex</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app-container">
         <!-- 顶部导航 -->
-        <header class="app-header">
+        <header class="app-header" style="background: linear-gradient(135deg, #409EFF 0%, #008AFF 100%);">
             <div class="header-left">
                 <a href="dashboard.html" class="app-logo">
                     <span class="logo-icon-sm">🚀</span>
                     <span>Qorex</span>
                 </a>
-                <nav class="main-nav">
-                    <a href="dashboard.html" class="nav-item active">📊 首页</a>
-                    <a href="bills.html" class="nav-item">💰 收益</a>
-                    <a href="trades.html" class="nav-item">📈 交易</a>
-                    <a href="profile.html" class="nav-item">👤 我的</a>
-                </nav>
             </div>
             <div class="header-right">
                 <button class="icon-btn">🔔</button>
                 <div class="user-menu">
-                    <div class="user-avatar">D</div>
+                    <div class="user-avatar" style="background: white; color: #409EFF;">D</div>
                     <span>demo@qorex.com</span>
                 </div>
             </div>
         </header>
 
         <!-- 主内容 -->
-        <main class="app-main">
-            <div class="page-header">
-                <h1 class="page-title">仪表盘</h1>
-                <p class="page-subtitle">欢迎回来，查看您的资产和收益概况</p>
-            </div>
-
-            <!-- 核心指标 -->
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <span>总资产 (USDT)</span>
-                        <span class="metric-icon">💵</span>
-                    </div>
-                    <div class="metric-value">12,345.67</div>
-                    <div class="metric-change positive">
-                        ↑ +234.56 (+1.93%) 今日
-                    </div>
+        <main class="app-main" style="background: #F5F7FA;">
+            <!-- 收益卡片 -->
+            <div class="revenue-card">
+                <div class="revenue-header">
+                    <span class="revenue-title">让数据决策，让概率说话</span>
+                    <span class="risk-status">风控状态：<strong style="color: #10B981;">正常</strong></span>
                 </div>
-
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <span>累计收益</span>
-                        <span class="metric-icon">📊</span>
+                <div class="revenue-content">
+                    <div class="revenue-left">
+                        <div class="revenue-label">今日收益</div>
+                        <div class="revenue-value">
+                            <span class="amount">1,234.56</span>
+                            <span class="unit">USDT</span>
+                        </div>
+                        <div class="revenue-rate">
+                            <span class="rate-value" style="color: #EF4444;">+12.8%</span>
+                        </div>
+                        <div class="revenue-history">
+                            <div class="history-item">
+                                <span class="history-label">历史总收益</span>
+                                <span class="history-value">8,923.45 USDT</span>
+                            </div>
+                            <div class="history-item">
+                                <span class="history-label">历史收益率</span>
+                                <span class="history-value">+89.2%</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="metric-value">1,567.89</div>
-                    <div class="metric-change positive">
-                        ↑ +15.2% 本月
-                    </div>
-                </div>
-
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <span>持仓盈亏</span>
-                        <span class="metric-icon">📈</span>
-                    </div>
-                    <div class="metric-value">+892.34</div>
-                    <div class="metric-change positive">
-                        ↑ +7.8% 持仓
-                    </div>
-                </div>
-
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <span>可用余额</span>
-                        <span class="metric-icon">💳</span>
-                    </div>
-                    <div class="metric-value">3,456.78</div>
-                    <div class="metric-change neutral">
-                        可随时提现
+                    <div class="revenue-chart">
+                        <div class="chart-placeholder">
+                            <div style="display: flex; align-items: flex-end; gap: 8px; height: 120px;">
+                                <div style="width: 12px; height: 40px; background: rgba(64, 158, 255, 0.3); border-radius: 4px;"></div>
+                                <div style="width: 12px; height: 60px; background: rgba(64, 158, 255, 0.4); border-radius: 4px;"></div>
+                                <div style="width: 12px; height: 45px; background: rgba(64, 158, 255, 0.5); border-radius: 4px;"></div>
+                                <div style="width: 12px; height: 80px; background: rgba(64, 158, 255, 0.6); border-radius: 4px;"></div>
+                                <div style="width: 12px; height: 65px; background: rgba(64, 158, 255, 0.7); border-radius: 4px;"></div>
+                                <div style="width: 12px; height: 90px; background: rgba(64, 158, 255, 0.8); border-radius: 4px;"></div>
+                                <div style="width: 12px; height: 100px; background: #409EFF; border-radius: 4px;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 持仓概览 -->
-            <div class="table-container">
-                <div class="table-header">
-                    <h3 class="table-title">持仓概览</h3>
-                    <button class="btn btn-primary btn-sm">
-                        <span>💰</span> 充值
-                    </button>
+            <!-- 金刚区导航 -->
+            <div class="nav-grid">
+                <a href="revenue.html" class="nav-item">
+                    <div class="nav-icon" style="background: linear-gradient(135deg, #409EFF 0%, #008AFF 100%);">💰</div>
+                    <span class="nav-text">收益中心</span>
+                </a>
+                <a href="robot.html" class="nav-item">
+                    <div class="nav-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">🤖</div>
+                    <span class="nav-text">机器人</span>
+                </a>
+                <a href="api-keys.html" class="nav-item">
+                    <div class="nav-icon" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">🔑</div>
+                    <span class="nav-text">API 管理</span>
+                </a>
+                <a href="trades.html" class="nav-item">
+                    <div class="nav-icon" style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);">📈</div>
+                    <span class="nav-text">交易记录</span>
+                </a>
+                <a href="referral.html" class="nav-item">
+                    <div class="nav-icon" style="background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);">🎁</div>
+                    <span class="nav-text">邀请奖励</span>
+                </a>
+                <a href="bills.html" class="nav-item">
+                    <div class="nav-icon" style="background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);">📊</div>
+                    <span class="nav-text">账单明细</span>
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <div class="nav-icon" style="background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);">👤</div>
+                    <span class="nav-text">个人中心</span>
+                </a>
+                <a href="subscribe.html" class="nav-item">
+                    <div class="nav-icon" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);">💎</div>
+                    <span class="nav-text">会员订阅</span>
+                </a>
+            </div>
+
+            <!-- 机器人状态卡片 -->
+            <div class="robot-card" onclick="location.href='robot.html'">
+                <div class="robot-header">
+                    <span class="robot-title">启停机器人</span>
+                    <div class="robot-switch">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
                 </div>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>资产</th>
-                            <th>持有数量</th>
-                            <th>当前价格</th>
-                            <th>价值 (USDT)</th>
-                            <th>24h 涨跌</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>BTC</strong></td>
-                            <td>0.125</td>
-                            <td>$42,356.78</td>
-                            <td>$5,294.60</td>
-                            <td class="positive">+2.4%</td>
-                            <td>
-                                <button class="btn btn-sm btn-outline">交易</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>ETH</strong></td>
-                            <td>2.5</td>
-                            <td>$2,234.56</td>
-                            <td>$5,586.40</td>
-                            <td class="positive">+3.1%</td>
-                            <td>
-                                <button class="btn btn-sm btn-outline">交易</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>USDT</strong></td>
-                            <td>1,464.67</td>
-                            <td>$1.00</td>
-                            <td>$1,464.67</td>
-                            <td class="neutral">0.0%</td>
-                            <td>
-                                <button class="btn btn-sm btn-outline">提现</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="robot-status">
+                    <div class="status-item">
+                        <span class="status-label">当前状态：</span>
+                        <span class="status-value" style="color: #10B981;">运行中</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">当前仓位：</span>
+                        <span class="status-value">1.5 BTC</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">杠杆倍数：</span>
+                        <span class="status-value">3x</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">风控等级：</span>
+                        <span class="status-value" style="color: #F59E0B;">中等风险</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 公告卡片 -->
+            <div class="announcement-card">
+                <div class="announcement-title">📢 公告</div>
+                <div class="announcement-content">
+                    QORE-X.AI 智能量化系统已全面升级，现已支持多策略并行、多因子评分、动态风控与自动托管交易。在近期波动行情中，系统会自动根据保证金等级切换风控模式，稳定执行策略节奏。所有策略均由 AI 主脑实时评分与调度，请保持托管运行，以确保最佳表现。
+                    <a href="#" class="detail-link">详情</a>
+                </div>
+            </div>
+
+            <!-- 行情列表 -->
+            <div class="market-card">
+                <div class="market-title">📊 实时行情</div>
+                <div class="market-list">
+                    <div class="market-item">
+                        <div class="market-left">
+                            <span class="market-icon">₿</span>
+                            <div>
+                                <div class="market-symbol">BTC/USDT</div>
+                                <div class="market-cap">市值 $823.4B</div>
+                            </div>
+                        </div>
+                        <div class="market-price">
+                            <div class="price-value">$42,356.78</div>
+                            <div class="price-change positive">+2.4%</div>
+                        </div>
+                    </div>
+                    <div class="market-item">
+                        <div class="market-left">
+                            <span class="market-icon" style="background: #627EEA;">Ξ</span>
+                            <div>
+                                <div class="market-symbol">ETH/USDT</div>
+                                <div class="market-cap">市值 $268.5B</div>
+                            </div>
+                        </div>
+                        <div class="market-price">
+                            <div class="price-value">$2,234.56</div>
+                            <div class="price-change positive">+3.1%</div>
+                        </div>
+                    </div>
+                    <div class="market-item">
+                        <div class="market-left">
+                            <span class="market-icon" style="background: #26A17B;">₮</span>
+                            <div>
+                                <div class="market-symbol">USDT</div>
+                                <div class="market-cap">市值 $95.2B</div>
+                            </div>
+                        </div>
+                        <div class="market-price">
+                            <div class="price-value">$1.00</div>
+                            <div class="price-change neutral">0.0%</div>
+                        </div>
+                    </div>
+                    <div class="market-item">
+                        <div class="market-left">
+                            <span class="market-icon" style="background: #F0B90B;">BNB</span>
+                            <div>
+                                <div class="market-symbol">BNB/USDT</div>
+                                <div class="market-cap">市值 $52.8B</div>
+                            </div>
+                        </div>
+                        <div class="market-price">
+                            <div class="price-value">$345.67</div>
+                            <div class="price-change negative">-1.2%</div>
+                        </div>
+                    </div>
+                    <div class="market-item">
+                        <div class="market-left">
+                            <span class="market-icon" style="background: #14615F;">SOL</span>
+                            <div>
+                                <div class="market-symbol">SOL/USDT</div>
+                                <div class="market-cap">市值 $48.3B</div>
+                            </div>
+                        </div>
+                        <div class="market-price">
+                            <div class="price-value">$108.92</div>
+                            <div class="price-change positive">+5.6%</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
+
+        <!-- 底部导航 -->
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="bottom-nav-item active">
+                <span class="bottom-nav-icon">🏠</span>
+                <span class="bottom-nav-text">首页</span>
+            </a>
+            <a href="revenue.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">💰</span>
+                <span class="bottom-nav-text">收益</span>
+            </a>
+            <a href="robot.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">🤖</span>
+                <span class="bottom-nav-text">机器人</span>
+            </a>
+            <a href="profile.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">👤</span>
+                <span class="bottom-nav-text">我的</span>
+            </a>
+        </nav>
     </div>
 </body>
 </html>

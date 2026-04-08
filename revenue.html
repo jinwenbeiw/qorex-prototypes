@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收益中心 - Qorex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部导航 -->
+        <header class="app-header" style="background: #F8F8F8; box-shadow: none; border-bottom: 1px solid #E5E7EB;">
+            <div class="header-left">
+                <a href="dashboard.html" class="app-logo" style="color: #409EFF;">
+                    <span class="logo-icon-sm">←</span>
+                </a>
+                <span class="page-title" style="color: #409EFF; font-weight: 600;">收益中心</span>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-sm btn-outline" style="border-color: #409EFF; color: #409EFF;">
+                    切换账户
+                </button>
+            </div>
+        </header>
+
+        <!-- 主内容 -->
+        <main class="app-main" style="background: #F5F7FA;">
+            <!-- 累计收益卡片 -->
+            <div class="revenue-summary-card">
+                <div class="summary-title">累计收益</div>
+                <div class="summary-value">
+                    <span class="amount" style="color: #EF4444;">+8,923.45</span>
+                    <span class="unit">USDT</span>
+                </div>
+                <div class="summary-winrate">
+                    <span class="winrate-label">胜率</span>
+                    <span class="winrate-value" style="color: #EF4444;">68.5%</span>
+                </div>
+                <div class="summary-today">
+                    今日盈亏 <span style="color: #EF4444;">+¥1,567.89</span>
+                </div>
+            </div>
+
+            <!-- 收益统计 -->
+            <div class="revenue-stats-card">
+                <div class="stats-header">
+                    <span class="stats-title">收益统计</span>
+                </div>
+                <div class="segmented-control">
+                    <button class="segment-btn active">全部</button>
+                    <button class="segment-btn">个人账户</button>
+                    <button class="segment-btn">集成账户</button>
+                </div>
+                <table class="revenue-table">
+                    <thead>
+                        <tr>
+                            <th>账户类型</th>
+                            <th>收益 (USDT)</th>
+                            <th>收益率</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>个人账户</td>
+                            <td style="color: #EF4444;">+5,234.56</td>
+                            <td style="color: #EF4444;">52.3%</td>
+                        </tr>
+                        <tr>
+                            <td>集成账户</td>
+                            <td style="color: #EF4444;">+3,688.89</td>
+                            <td style="color: #EF4444;">36.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="chart-container">
+                    <div class="chart-placeholder" style="height: 150px;">
+                        <svg viewBox="0 0 400 150" style="width: 100%; height: 100%;">
+                            <polyline 
+                                points="0,120 50,100 100,110 150,80 200,90 250,60 300,70 350,40 400,30"
+                                fill="none"
+                                stroke="#409EFF"
+                                stroke-width="2"
+                            />
+                            <polyline 
+                                points="0,120 50,100 100,110 150,80 200,90 250,60 300,70 350,40 400,30 400,150 0,150"
+                                fill="rgba(64, 158, 255, 0.1)"
+                                stroke="none"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 收益记录 -->
+            <div class="revenue-records-card">
+                <div class="records-header">
+                    <span class="records-title">收益记录</span>
+                </div>
+                <div class="record-list">
+                    <div class="record-item">
+                        <div class="record-left">
+                            <div class="record-position">
+                                <span class="position-tag long">多</span>
+                                <span class="record-pair">BTC/USDT</span>
+                            </div>
+                            <div class="record-date">平仓日期：2026-04-08 06:15</div>
+                        </div>
+                        <div class="record-right">
+                            <div class="record-profit" style="color: #EF4444;">+234.56 USDT</div>
+                            <span class="arrow">›</span>
+                        </div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-left">
+                            <div class="record-position">
+                                <span class="position-tag short">空</span>
+                                <span class="record-pair">ETH/USDT</span>
+                            </div>
+                            <div class="record-date">平仓日期：2026-04-08 05:42</div>
+                        </div>
+                        <div class="record-right">
+                            <div class="record-profit" style="color: #EF4444;">+156.78 USDT</div>
+                            <span class="arrow">›</span>
+                        </div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-left">
+                            <div class="record-position">
+                                <span class="position-tag long">多</span>
+                                <span class="record-pair">SOL/USDT</span>
+                            </div>
+                            <div class="record-date">平仓日期：2026-04-08 03:20</div>
+                        </div>
+                        <div class="record-right">
+                            <div class="record-profit" style="color: #10B981;">-89.34 USDT</div>
+                            <span class="arrow">›</span>
+                        </div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-left">
+                            <div class="record-position">
+                                <span class="position-tag long">多</span>
+                                <span class="record-pair">BNB/USDT</span>
+                            </div>
+                            <div class="record-date">平仓日期：2026-04-07 22:15</div>
+                        </div>
+                        <div class="record-right">
+                            <div class="record-profit" style="color: #EF4444;">+312.45 USDT</div>
+                            <span class="arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部导航 -->
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">🏠</span>
+                <span class="bottom-nav-text">首页</span>
+            </a>
+            <a href="revenue.html" class="bottom-nav-item active">
+                <span class="bottom-nav-icon">💰</span>
+                <span class="bottom-nav-text">收益</span>
+            </a>
+            <a href="robot.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">🤖</span>
+                <span class="bottom-nav-text">机器人</span>
+            </a>
+            <a href="profile.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">👤</span>
+                <span class="bottom-nav-text">我的</span>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>

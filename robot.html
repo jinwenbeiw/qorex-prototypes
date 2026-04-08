@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>机器人控制台 - Qorex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部导航 -->
+        <header class="app-header" style="background: #FFFFFF; box-shadow: none; border-bottom: 1px solid #E5E7EB;">
+            <div class="header-left">
+                <a href="dashboard.html" class="app-logo" style="color: #333;">
+                    <span class="logo-icon-sm">←</span>
+                </a>
+                <span class="page-title" style="color: #333; font-weight: 600;">机器人控制台</span>
+            </div>
+            <div class="header-right">
+                <div class="status-badge" style="display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 8px; height: 8px; background: #10B981; border-radius: 50%;"></span>
+                    <span style="font-size: 0.9em; color: #666;">状态：正常</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主内容 -->
+        <main class="app-main" style="background: #F5F7FA;">
+            <!-- 启停开关 -->
+            <div class="robot-control-card">
+                <div class="control-header">
+                    <span class="control-title">启停机器人</span>
+                    <label class="switch-large">
+                        <input type="checkbox" checked>
+                        <span class="slider-large"></span>
+                    </label>
+                </div>
+                <div class="control-status">
+                    <div class="status-row">
+                        <span class="status-label">当前状态：</span>
+                        <span class="status-value running">运行中</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">运行时长：</span>
+                        <span class="status-value">23 小时 45 分钟</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 仓位信息 -->
+            <div class="position-card">
+                <div class="position-header">
+                    <span class="position-title">当前仓位</span>
+                </div>
+                <table class="position-table">
+                    <thead>
+                        <tr>
+                            <th>账户类型</th>
+                            <th>杠杆倍数</th>
+                            <th>风控等级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>个人账户</td>
+                            <td>3x</td>
+                            <td><span class="risk-tag medium">中等风险</span></td>
+                        </tr>
+                        <tr>
+                            <td>集成账户</td>
+                            <td>2x</td>
+                            <td><span class="risk-tag low">低风险</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 策略配置 -->
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <span class="strategy-title">策略配置</span>
+                </div>
+                <div class="strategy-form">
+                    <div class="form-group">
+                        <label class="form-label">交易对</label>
+                        <select class="form-control">
+                            <option>BTC/USDT</option>
+                            <option>ETH/USDT</option>
+                            <option>SOL/USDT</option>
+                            <option>BNB/USDT</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">杠杆倍数</label>
+                        <select class="form-control">
+                            <option>1x (保守)</option>
+                            <option selected>2x (稳健)</option>
+                            <option>3x (中等风险)</option>
+                            <option>5x (高风险)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">风控模式</label>
+                        <select class="form-control">
+                            <option>保守模式 (保证金≥80%)</option>
+                            <option selected>平衡模式 (保证金≥50%)</option>
+                            <option>激进模式 (保证金≥30%)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">最大仓位</label>
+                        <input type="number" class="form-control" value="5000" placeholder="USDT">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block" style="margin-top: 20px;">保存配置</button>
+            </div>
+
+            <!-- 任务记录 -->
+            <div class="task-records-card">
+                <div class="records-header">
+                    <span class="records-title">任务记录</span>
+                </div>
+                <div class="empty-state">
+                    <div class="empty-icon">📝</div>
+                    <div class="empty-text">暂无记录</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部导航 -->
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">🏠</span>
+                <span class="bottom-nav-text">首页</span>
+            </a>
+            <a href="revenue.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">💰</span>
+                <span class="bottom-nav-text">收益</span>
+            </a>
+            <a href="robot.html" class="bottom-nav-item active">
+                <span class="bottom-nav-icon">🤖</span>
+                <span class="bottom-nav-text">机器人</span>
+            </a>
+            <a href="profile.html" class="bottom-nav-item">
+                <span class="bottom-nav-icon">👤</span>
+                <span class="bottom-nav-text">我的</span>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>
