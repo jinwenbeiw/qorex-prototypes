@@ -1,0 +1,26 @@
+{
+  "name": "Qorex - 智能量化交易平台",
+  "short_name": "Qorex",
+  "description": "让数据决策，让概率说话",
+  "start_url": "/dashboard.html",
+  "display": "standalone",
+  "background_color": "#F5F7FA",
+  "theme_color": "#409EFF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "static/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "static/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity"],
+  "lang": "zh-CN"
+}
