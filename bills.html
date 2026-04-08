@@ -3,73 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qore-X - 账单</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Microsoft YaHei', sans-serif; background: #f8fafc; min-height: 100vh; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 10px; color: white; font-size: 20px; font-weight: bold; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .page-title { font-size: 24px; font-weight: bold; color: #1e293b; margin-bottom: 30px; }
-        .card { background: white; border-radius: 16px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .card-title { font-size: 18px; font-weight: bold; color: #1e293b; margin-bottom: 20px; }
-        .bill-item { padding: 15px; background: #f8fafc; border-radius: 8px; margin-bottom: 15px; }
-        .bill-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
-        .bill-period { font-size: 14px; font-weight: 600; color: #374151; }
-        .bill-status { padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; }
-        .bill-status.paid { background: #d1fae5; color: #065f46; }
-        .bill-status.unpaid { background: #fef3c7; color: #92400e; }
-        .bill-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 13px; color: #6b7280; }
-        .bill-total { margin-top: 10px; padding-top: 10px; border-top: 1px solid #e5e7eb; font-size: 14px; font-weight: 600; color: #1e293b; }
-        .pay-btn { padding: 8px 16px; background: #1296db; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; float: right; }
-    </style>
+    <title>账单 - Qorex</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo"><span>🚀</span><span>Qore-X</span></div>
-    </div>
-    <div class="container">
-        <div class="page-title">📄 我的账单</div>
-        <div class="card">
-            <div class="card-title">2026 年 4 月账单</div>
-            <div class="bill-item">
-                <div class="bill-header">
-                    <div class="bill-period">月费 - 专业版</div>
-                    <div class="bill-status paid">✅ 已支付</div>
-                </div>
-                <div class="bill-details">
-                    <div>周期：2026-04-01 ~ 2026-04-30</div>
-                    <div>金额：68 USDT</div>
-                    <div>支付时间：04-01 10:00</div>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <a href="dashboard.html" class="app-logo">
+                    <span class="logo-icon-sm">🚀</span>
+                    <span>Qorex</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">📊 首页</a>
+                    <a href="bills.html" class="nav-item active">💰 收益</a>
+                    <a href="trades.html" class="nav-item">📈 交易</a>
+                    <a href="profile.html" class="nav-item">👤 我的</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn">🔔</button>
+                <div class="user-menu">
+                    <div class="user-avatar">D</div>
+                    <span>demo@qorex.com</span>
                 </div>
             </div>
-            <div class="bill-item">
-                <div class="bill-header">
-                    <div class="bill-period">利润分成 - 3 月</div>
-                    <div class="bill-status paid">✅ 已支付</div>
-                </div>
-                <div class="bill-details">
-                    <div>周期：2026-03-01 ~ 2026-03-31</div>
-                    <div>利润：500 USDT</div>
-                    <div>分成：150 USDT (30%)</div>
-                </div>
-                <div class="bill-total">总计：150 USDT</div>
+        </header>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h1 class="page-title">账单明细</h1>
+                <p class="page-subtitle">查看您的收益、费用和交易记录</p>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-title">2026 年 3 月账单</div>
-            <div class="bill-item">
-                <div class="bill-header">
-                    <div class="bill-period">月费 - 专业版</div>
-                    <div class="bill-status paid">✅ 已支付</div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>本月收益</span>
+                        <span class="metric-icon">📊</span>
+                    </div>
+                    <div class="metric-value">+1,567.89</div>
+                    <div class="metric-change positive">
+                        ↑ +15.2% 收益率
+                    </div>
                 </div>
-                <div class="bill-details">
-                    <div>周期：2026-03-01 ~ 2026-03-31</div>
-                    <div>金额：68 USDT</div>
-                    <div>支付时间：03-01 10:00</div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>累计收益</span>
+                        <span class="metric-icon">💰</span>
+                    </div>
+                    <div class="metric-value">+8,923.45</div>
+                    <div class="metric-change positive">
+                        ↑ +89.2% 总收益
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>本月费用</span>
+                        <span class="metric-icon">📄</span>
+                    </div>
+                    <div class="metric-value">-123.45</div>
+                    <div class="metric-change neutral">
+                        交易手续费
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>净收益</span>
+                        <span class="metric-icon">💳</span>
+                    </div>
+                    <div class="metric-value">+1,444.44</div>
+                    <div class="metric-change positive">
+                        ↑ 扣除费用后
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="table-container">
+                <div class="table-header">
+                    <h3 class="table-title">账单记录</h3>
+                    <div style="display: flex; gap: 8px;">
+                        <select class="form-control" style="width: auto;">
+                            <option>全部类型</option>
+                            <option>收益</option>
+                            <option>费用</option>
+                            <option>充值</option>
+                            <option>提现</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>金额 (USDT)</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026-04-08</td>
+                            <td><span style="color: var(--success);">●</span> 收益</td>
+                            <td>策略交易收益 - BTC/USDT</td>
+                            <td class="positive">+234.56</td>
+                            <td><span class="status-badge active">已完成</span></td>
+                        </tr>
+                        <tr>
+                            <td>2026-04-07</td>
+                            <td><span style="color: var(--danger);">●</span> 费用</td>
+                            <td>交易手续费 - ETH/USDT</td>
+                            <td class="negative">-12.34</td>
+                            <td><span class="status-badge active">已完成</span></td>
+                        </tr>
+                        <tr>
+                            <td>2026-04-07</td>
+                            <td><span style="color: var(--success);">●</span> 收益</td>
+                            <td>策略交易收益 - ETH/USDT</td>
+                            <td class="positive">+156.78</td>
+                            <td><span class="status-badge active">已完成</span></td>
+                        </tr>
+                        <tr>
+                            <td>2026-04-06</td>
+                            <td><span style="color: var(--success);">●</span> 充值</td>
+                            <td>USDT 充值</td>
+                            <td class="positive">+5,000.00</td>
+                            <td><span class="status-badge active">已完成</span></td>
+                        </tr>
+                        <tr>
+                            <td>2026-04-05</td>
+                            <td><span style="color: var(--danger);">●</span> 提现</td>
+                            <td>USDT 提现</td>
+                            <td class="negative">-1,000.00</td>
+                            <td><span class="status-badge active">已完成</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
     </div>
 </body>
 </html>

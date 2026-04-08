@@ -3,69 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qore-X - 提现</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Microsoft YaHei', sans-serif; background: #f8fafc; min-height: 100vh; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 10px; color: white; font-size: 20px; font-weight: bold; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .page-title { font-size: 24px; font-weight: bold; color: #1e293b; margin-bottom: 30px; }
-        .card { background: white; border-radius: 16px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .card-title { font-size: 18px; font-weight: bold; color: #1e293b; margin-bottom: 20px; }
-        .balance-info { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 20px; border-radius: 12px; margin-bottom: 20px; text-align: center; }
-        .balance-label { font-size: 14px; color: #0369a1; margin-bottom: 5px; }
-        .balance-amount { font-size: 32px; font-weight: bold; color: #0c4a6e; }
-        .form-group { margin-bottom: 20px; }
-        .form-label { display: block; font-size: 14px; font-weight: 500; color: #374151; margin-bottom: 8px; }
-        .form-input { width: 100%; padding: 12px 16px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; transition: all 0.3s; }
-        .form-input:focus { outline: none; border-color: #1296db; box-shadow: 0 0 0 3px rgba(18, 150, 219, 0.1); }
-        .fee-info { background: #fff7ed; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; color: #92400e; }
-        .submit-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #1296db 0%, #0f7fb8 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
-        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(18, 150, 219, 0.3); }
-        .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
-        .tab { padding: 10px 20px; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
-        .tab.active { background: #1296db; color: white; }
-    </style>
+    <title>提现 - Qorex</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo"><span>🚀</span><span>Qore-X</span></div>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <a href="dashboard.html" class="app-logo">
+                    <span class="logo-icon-sm">🚀</span>
+                    <span>Qorex</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">📊 首页</a>
+                    <a href="bills.html" class="nav-item">💰 收益</a>
+                    <a href="trades.html" class="nav-item">📈 交易</a>
+                    <a href="profile.html" class="nav-item">👤 我的</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn">🔔</button>
+                <div class="user-menu">
+                    <div class="user-avatar">D</div>
+                    <span>demo@qorex.com</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h1 class="page-title">提现</h1>
+                <p class="page-subtitle">将您的资产提现到外部钱包</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px;">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">💳 可用余额</h3>
+                    </div>
+                    <div style="text-align: center; padding: 24px;">
+                        <div style="font-size: 2.5em; font-weight: 700; color: var(--primary); margin-bottom: 8px;">
+                            3,456.78 USDT
+                        </div>
+                        <p style="color: var(--text-gray);">约等于 ¥25,123.45</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">📊 本月已提现</h3>
+                    </div>
+                    <div style="text-align: center; padding: 24px;">
+                        <div style="font-size: 2.5em; font-weight: 700; color: var(--success); margin-bottom: 8px;">
+                            1,000.00 USDT
+                        </div>
+                        <p style="color: var(--text-gray);">剩余可提现：9,000.00 USDT/日</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 24px; max-width: 900px;">
+                <div class="card-header">
+                    <h3 class="card-title">提现信息</h3>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label>选择币种</label>
+                        <select class="form-control">
+                            <option>USDT - Tether</option>
+                            <option>BTC - Bitcoin</option>
+                            <option>ETH - Ethereum</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>提现地址</label>
+                        <input type="text" class="form-control" placeholder="请输入钱包地址" value="0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb">
+                        <p style="color: var(--text-gray); font-size: 0.85em; margin-top: 8px;">
+                            ⚠️ 请确保地址正确，一旦提交无法撤销
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>提现金额</label>
+                        <div style="position: relative;">
+                            <input type="number" class="form-control" placeholder="请输入金额" value="500" style="padding-right: 80px;">
+                            <span style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--text-gray);">USDT</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.9em;">
+                            <span style="color: var(--text-gray);">手续费：1.00 USDT</span>
+                            <button type="button" class="btn btn-sm btn-outline">全部提现</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>安全验证</label>
+                        <div style="display: flex; gap: 12px;">
+                            <input type="text" class="form-control" placeholder="请输入验证码" style="flex: 1;">
+                            <button type="button" class="btn btn-outline">获取验证码</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="background: var(--bg-light); margin-top: 24px;">
+                        <div style="display: flex; justify-content: space-between; padding: 12px 0;">
+                            <span style="color: var(--text-gray);">提现金额</span>
+                            <strong>500.00 USDT</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--border);">
+                            <span style="color: var(--text-gray);">手续费</span>
+                            <strong>1.00 USDT</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--border); font-size: 1.1em;">
+                            <span style="font-weight: 600;">实际到账</span>
+                            <strong style="color: var(--success);">499.00 USDT</strong>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-block" style="margin-top: 24px; padding: 16px;">
+                        确认提现
+                    </button>
+                </form>
+            </div>
+        </main>
     </div>
-    <div class="container">
-        <div class="page-title">💸 充值/提现</div>
-        <div class="tabs">
-            <div class="tab active">提现</div>
-            <div class="tab">充值</div>
-        </div>
-        <div class="card">
-            <div class="card-title">USDT 提现</div>
-            <div class="balance-info">
-                <div class="balance-label">可提现余额</div>
-                <div class="balance-amount">12,345.67 USDT</div>
-            </div>
-            <div class="form-group">
-                <label class="form-label">提现金额</label>
-                <input type="number" class="form-input" placeholder="最少 10 USDT" min="10">
-            </div>
-            <div class="form-group">
-                <label class="form-label">USDT 地址 (TRC20)</label>
-                <input type="text" class="form-input" placeholder="输入您的 USDT 地址">
-            </div>
-            <div class="fee-info">
-                💡 手续费：1% (由您承担)<br>
-                例如：提现 1000 USDT，实际到账 990 USDT，手续费 10 USDT
-            </div>
-            <button class="submit-btn">确认提现</button>
-        </div>
-    </div>
-    <script>
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>

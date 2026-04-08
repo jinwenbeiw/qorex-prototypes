@@ -3,107 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qore-X - 推广中心</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Microsoft YaHei', sans-serif; background: #f8fafc; min-height: 100vh; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 10px; color: white; font-size: 20px; font-weight: bold; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .page-title { font-size: 24px; font-weight: bold; color: #1e293b; margin-bottom: 30px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
-        .stat-card { background: white; border-radius: 16px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
-        .stat-icon { font-size: 32px; margin-bottom: 10px; }
-        .stat-value { font-size: 28px; font-weight: bold; color: #1e293b; margin-bottom: 5px; }
-        .stat-label { font-size: 13px; color: #64748b; }
-        .card { background: white; border-radius: 16px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .card-title { font-size: 18px; font-weight: bold; color: #1e293b; margin-bottom: 20px; }
-        .referral-link { display: flex; gap: 10px; margin-bottom: 20px; }
-        .referral-input { flex: 1; padding: 12px; background: #f3f4f6; border: none; border-radius: 8px; font-size: 14px; color: #374151; }
-        .copy-btn { padding: 12px 24px; background: #1296db; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
-        .qr-section { text-align: center; padding: 20px; background: #f9fafb; border-radius: 12px; }
-        .qr-code { width: 200px; height: 200px; background: white; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #9ca3af; }
-        .reward-item { padding: 15px; background: #f8fafc; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #10b981; }
-        .reward-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
-        .reward-user { font-size: 14px; font-weight: 600; color: #374151; }
-        .reward-amount { font-size: 14px; font-weight: 600; color: #10b981; }
-        .reward-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 12px; color: #6b7280; }
-        .withdraw-btn { padding: 8px 16px; background: #1296db; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; float: right; }
-    </style>
+    <title>推荐 - Qorex</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo"><span>🚀</span><span>Qore-X</span></div>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <a href="dashboard.html" class="app-logo">
+                    <span class="logo-icon-sm">🚀</span>
+                    <span>Qorex</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">📊 首页</a>
+                    <a href="bills.html" class="nav-item">💰 收益</a>
+                    <a href="trades.html" class="nav-item">📈 交易</a>
+                    <a href="profile.html" class="nav-item">👤 我的</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn">🔔</button>
+                <div class="user-menu">
+                    <div class="user-avatar">D</div>
+                    <span>demo@qorex.com</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h1 class="page-title">推荐奖励计划</h1>
+                <p class="page-subtitle">邀请好友加入 Qorex，共享收益</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>累计邀请</span>
+                        <span class="metric-icon">👥</span>
+                    </div>
+                    <div class="metric-value">12</div>
+                    <div class="metric-change positive">
+                        ↑ +3 人 本月
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>推荐收益</span>
+                        <span class="metric-icon">💰</span>
+                    </div>
+                    <div class="metric-value">567.89</div>
+                    <div class="metric-change positive">
+                        ↑ USDT 累计
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>待发放奖励</span>
+                        <span class="metric-icon">🎁</span>
+                    </div>
+                    <div class="metric-value">89.50</div>
+                    <div class="metric-change neutral">
+                        预计明日发放
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>有效好友</span>
+                        <span class="metric-icon">✅</span>
+                    </div>
+                    <div class="metric-value">8</div>
+                    <div class="metric-change neutral">
+                        已入金用户
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">📋 邀请记录</h3>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>用户</th>
+                                <th>注册时间</th>
+                                <th>状态</th>
+                                <th>已获收益</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>user***123</td>
+                                <td>2026-04-05</td>
+                                <td><span class="status-badge active">已入金</span></td>
+                                <td class="positive">+45.60 USDT</td>
+                            </tr>
+                            <tr>
+                                <td>user***456</td>
+                                <td>2026-04-03</td>
+                                <td><span class="status-badge active">已入金</span></td>
+                                <td class="positive">+78.90 USDT</td>
+                            </tr>
+                            <tr>
+                                <td>user***789</td>
+                                <td>2026-04-01</td>
+                                <td><span class="status-badge paused">未入金</span></td>
+                                <td class="neutral">0.00 USDT</td>
+                            </tr>
+                            <tr>
+                                <td>user***012</td>
+                                <td>2026-03-28</td>
+                                <td><span class="status-badge active">已入金</span></td>
+                                <td class="positive">+123.45 USDT</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-header">
+                            <h3 class="card-title">🔗 我的邀请链接</h3>
+                        </div>
+                        <div style="padding: 16px; background: var(--bg-light); border-radius: 8px; margin-bottom: 16px;">
+                            <div style="font-family: monospace; font-size: 0.9em; word-break: break-all; margin-bottom: 12px;">
+                                https://qorex.com/register?ref=DEMO123
+                            </div>
+                            <button class="btn btn-primary btn-block btn-sm">复制链接</button>
+                        </div>
+                        <div style="text-align: center; color: var(--text-gray); font-size: 0.9em;">
+                            <p>好友通过您的链接注册并完成入金</p>
+                            <p>您可获得好友交易手续费的 <strong style="color: var(--primary);">20%</strong> 作为奖励</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">📊 奖励规则</h3>
+                        </div>
+                        <div style="line-height: 2; color: var(--text-gray);">
+                            <p>✅ 好友注册并完成 KYC：<strong style="color: var(--success);">+5 USDT</strong></p>
+                            <p>✅ 好友首次入金 ≥100 USDT：<strong style="color: var(--success);">+10 USDT</strong></p>
+                            <p>✅ 好友交易手续费返佣：<strong style="color: var(--success);">20%</strong></p>
+                            <p>✅ 月度邀请榜前 10 名：<strong style="color: var(--success);">额外奖励</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-    <div class="container">
-        <div class="page-title">🎁 推广中心</div>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon">👥</div>
-                <div class="stat-value">15</div>
-                <div class="stat-label">累计推荐</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">✅</div>
-                <div class="stat-value">8</div>
-                <div class="stat-label">活跃客户</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">💰</div>
-                <div class="stat-value">2,345 USDT</div>
-                <div class="stat-label">累计奖励</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">💸</div>
-                <div class="stat-value">567 USDT</div>
-                <div class="stat-label">可提现</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-title">📤 我的推广链接</div>
-            <div class="referral-link">
-                <input type="text" class="referral-input" value="https://qorex.com/register?ref=USER10086" readonly>
-                <button class="copy-btn">复制链接</button>
-            </div>
-            <div class="qr-section">
-                <div class="qr-code">[二维码图片]</div>
-                <p style="font-size: 13px; color: #6b7280;">扫码注册，好友享 5 折优惠</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-title">📊 奖励明细</div>
-            <div class="reward-item">
-                <div class="reward-header">
-                    <div class="reward-user">user*** 开通月费专业版</div>
-                    <div class="reward-amount">+299.7 USDT</div>
-                </div>
-                <div class="reward-details">
-                    <div>类型：月费分成 (30%)</div>
-                    <div>时间：04-06 15:30</div>
-                    <div>状态：✅ 已到账</div>
-                </div>
-            </div>
-            <div class="reward-item">
-                <div class="reward-header">
-                    <div class="reward-user">user*** 利润分成</div>
-                    <div class="reward-amount">+99.9 USDT/月</div>
-                </div>
-                <div class="reward-details">
-                    <div>类型：分润分成 (10%)</div>
-                    <div>时间：持续中</div>
-                    <div>状态：✅ 每月自动</div>
-                </div>
-                <button class="withdraw-btn">提现</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        document.querySelector('.copy-btn').addEventListener('click', () => {
-            const input = document.querySelector('.referral-input');
-            input.select();
-            document.execCommand('copy');
-            alert('链接已复制！');
-        });
-    </script>
 </body>
 </html>

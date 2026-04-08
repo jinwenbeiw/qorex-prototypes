@@ -3,165 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qore-X - 选择方案</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .header { text-align: center; margin-bottom: 40px; }
-        .logo-icon { font-size: 48px; margin-bottom: 10px; }
-        .title { font-size: 24px; font-weight: bold; color: white; margin-bottom: 5px; }
-        .subtitle { font-size: 14px; color: rgba(255,255,255,0.9); }
-        .plans-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .plan-card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            transition: all 0.3s;
-            position: relative;
-        }
-        .plan-card:hover { transform: translateY(-5px); box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
-        .plan-card.recommended { border: 3px solid #1296db; }
-        .recommended-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: linear-gradient(135deg, #1296db 0%, #0f7fb8 100%);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .plan-icon { font-size: 48px; margin-bottom: 15px; }
-        .plan-name { font-size: 20px; font-weight: bold; color: #1e293b; margin-bottom: 5px; }
-        .plan-price { font-size: 32px; font-weight: bold; color: #1296db; margin-bottom: 5px; }
-        .plan-price span { font-size: 14px; color: #64748b; font-weight: normal; }
-        .plan-description { font-size: 14px; color: #6b7280; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e7eb; }
-        .plan-features { list-style: none; margin-bottom: 30px; }
-        .plan-features li { font-size: 14px; color: #374151; margin-bottom: 12px; padding-left: 24px; position: relative; }
-        .plan-features li:before { content: "✅"; position: absolute; left: 0; }
-        .plan-features li.warning:before { content: "⚠️"; }
-        .select-btn {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #1296db 0%, #0f7fb8 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .select-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(18, 150, 219, 0.3); }
-        .select-btn.outline { background: white; color: #1296db; border: 2px solid #1296db; }
-        .select-btn.outline:hover { background: #1296db; color: white; }
-        .comparison {
-            max-width: 1200px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        .comparison-title { font-size: 20px; font-weight: bold; color: #1e293b; margin-bottom: 20px; text-align: center; }
-        .comparison-table { width: 100%; border-collapse: collapse; }
-        .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e5e7eb; }
-        .comparison-table th { background: #f9fafb; font-weight: 600; color: #374151; }
-        .comparison-table td:last-child { text-align: center; }
-    </style>
+    <title>订阅 - Qorex</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo-icon">🚀</div>
-        <div class="title">选择适合您的方案</div>
-        <div class="subtitle">灵活付费，按需选择</div>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <a href="dashboard.html" class="app-logo">
+                    <span class="logo-icon-sm">🚀</span>
+                    <span>Qorex</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">📊 首页</a>
+                    <a href="bills.html" class="nav-item">💰 收益</a>
+                    <a href="trades.html" class="nav-item">📈 交易</a>
+                    <a href="profile.html" class="nav-item">👤 我的</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn">🔔</button>
+                <div class="user-menu">
+                    <div class="user-avatar">D</div>
+                    <span>demo@qorex.com</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h1 class="page-title">订阅方案</h1>
+                <p class="page-subtitle">选择适合您的会员等级，享受更多特权</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px;">
+                <!-- 免费版 -->
+                <div class="card" style="border: 2px solid var(--border);">
+                    <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+                        <h3 class="card-title">💚 免费版</h3>
+                        <span class="status-badge inactive">当前方案</span>
+                    </div>
+                    <div style="text-align: center; padding: 24px 0;">
+                        <div style="font-size: 2.5em; font-weight: 700;">¥0</div>
+                        <div style="color: var(--text-gray);">永久免费</div>
+                    </div>
+                    <ul style="list-style: none; line-height: 2.5; color: var(--text-gray);">
+                        <li>✅ 基础量化策略</li>
+                        <li>✅ 实时行情查看</li>
+                        <li>✅ 每日 10 次交易</li>
+                        <li>❌ 高级策略定制</li>
+                        <li>❌ 优先客服支持</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block" style="margin-top: 24px;" disabled>当前方案</button>
+                </div>
+
+                <!-- 专业版 -->
+                <div class="card" style="border: 2px solid var(--primary); position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 16px; border-radius: 20px; font-size: 0.85em; font-weight: 600;">
+                        热门推荐
+                    </div>
+                    <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+                        <h3 class="card-title">💎 专业版</h3>
+                    </div>
+                    <div style="text-align: center; padding: 24px 0;">
+                        <div style="font-size: 2.5em; font-weight: 700; color: var(--primary);">¥299</div>
+                        <div style="color: var(--text-gray);">每月</div>
+                    </div>
+                    <ul style="list-style: none; line-height: 2.5; color: var(--text-dark);">
+                        <li>✅ 所有免费版功能</li>
+                        <li>✅ 高级量化策略</li>
+                        <li>✅ 无限交易次数</li>
+                        <li>✅ 实时告警通知</li>
+                        <li>✅ 优先客服支持</li>
+                    </ul>
+                    <button class="btn btn-primary btn-block" style="margin-top: 24px;">立即升级</button>
+                </div>
+
+                <!-- 企业版 -->
+                <div class="card" style="border: 2px solid var(--warning);">
+                    <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+                        <h3 class="card-title">🏆 企业版</h3>
+                    </div>
+                    <div style="text-align: center; padding: 24px 0;">
+                        <div style="font-size: 2.5em; font-weight: 700; color: var(--warning);">¥999</div>
+                        <div style="color: var(--text-gray);">每月</div>
+                    </div>
+                    <ul style="list-style: none; line-height: 2.5; color: var(--text-dark);">
+                        <li>✅ 所有专业版功能</li>
+                        <li>✅ 专属策略定制</li>
+                        <li>✅ 多账户管理</li>
+                        <li>✅ API 优先访问</li>
+                        <li>✅ 1 对 1 专属客服</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block" style="margin-top: 24px; border-color: var(--warning); color: var(--warning);">联系销售</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">📊 订阅记录</h3>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>订单号</th>
+                            <th>方案</th>
+                            <th>金额</th>
+                            <th>购买日期</th>
+                            <th>到期日期</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ORD20260401001</td>
+                            <td>免费版</td>
+                            <td>¥0</td>
+                            <td>2026-04-01</td>
+                            <td>-</td>
+                            <td><span class="status-badge active">有效</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
     </div>
-    <div class="plans-container">
-        <div class="plan-card">
-            <div class="plan-icon">🆓</div>
-            <div class="plan-name">免费试用</div>
-            <div class="plan-price">0 USDT <span>/ 3 天</span></div>
-            <div class="plan-description">适合新手体验，零风险尝试</div>
-            <ul class="plan-features">
-                <li>3 天免费使用</li>
-                <li>1 个交易所账户</li>
-                <li>基础资产管理</li>
-                <li>交易记录查询</li>
-                <li class="warning">不支持自动交易</li>
-            </ul>
-            <button class="select-btn outline" onclick="selectPlan('trial')">开始试用</button>
-        </div>
-        <div class="plan-card recommended">
-            <div class="recommended-badge">⭐ 推荐</div>
-            <div class="plan-icon">💰</div>
-            <div class="plan-name">月费专业版</div>
-            <div class="plan-price">68 USDT <span>/ 月</span></div>
-            <div class="plan-description">适合个人交易者，资金自主管理</div>
-            <ul class="plan-features">
-                <li>3 个交易所账户</li>
-                <li>实时资产监控</li>
-                <li>自动交易策略</li>
-                <li>交易记录统计</li>
-                <li>基础风险控制</li>
-                <li class="warning">需缴纳 30% 利润分成</li>
-            </ul>
-            <button class="select-btn" onclick="selectPlan('monthly')">立即开通</button>
-        </div>
-        <div class="plan-card">
-            <div class="plan-icon">🏦</div>
-            <div class="plan-name">资金托管版</div>
-            <div class="plan-price">0 USDT <span>/ 月</span></div>
-            <div class="plan-description">适合完全信任，专业团队管理</div>
-            <ul class="plan-features">
-                <li>无限交易所账户</li>
-                <li>专业团队管理</li>
-                <li>高级交易策略</li>
-                <li>实时风险监控</li>
-                <li>专属客服支持</li>
-                <li>只收 30% 利润分成</li>
-            </ul>
-            <button class="select-btn outline" onclick="selectPlan('custody')">申请托管</button>
-        </div>
-    </div>
-    <div class="comparison">
-        <div class="comparison-title">📊 方案详细对比</div>
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>功能/方案</th>
-                    <th>免费试用</th>
-                    <th>月费专业版</th>
-                    <th>资金托管</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>价格</td><td>0 USDT/3 天</td><td>68 USDT/月</td><td>0 USDT/月</td></tr>
-                <tr><td>利润分成</td><td>0%</td><td>30%</td><td>30%</td></tr>
-                <tr><td>交易所数量</td><td>1 个</td><td>3 个</td><td>无限</td></tr>
-                <tr><td>资金位置</td><td>自己账户</td><td>自己账户</td><td>公司账户</td></tr>
-                <tr><td>自动交易</td><td>❌</td><td>✅</td><td>✅</td></tr>
-                <tr><td>风险控制</td><td>基础</td><td>基础</td><td>高级</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <script>
-        function selectPlan(planType) {
-            const plans = { 'trial': '免费试用', 'monthly': '月费专业版', 'custody': '资金托管版' };
-            alert('您选择了：' + plans[planType] + '\n\n下一步将进入支付/申请流程');
-        }
-    </script>
 </body>
 </html>

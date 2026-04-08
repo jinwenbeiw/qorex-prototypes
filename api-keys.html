@@ -3,108 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qore-X - API 管理</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Microsoft YaHei', sans-serif; background: #f8fafc; min-height: 100vh; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 10px; color: white; font-size: 20px; font-weight: bold; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-        .page-title { font-size: 24px; font-weight: bold; color: #1e293b; }
-        .add-btn { padding: 12px 24px; background: linear-gradient(135deg, #1296db 0%, #0f7fb8 100%); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
-        .add-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(18, 150, 219, 0.3); }
-        .api-card { background: white; border-radius: 16px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 4px solid #10b981; }
-        .api-card.warning { border-left-color: #f59e0b; }
-        .api-card.error { border-left-color: #ef4444; }
-        .api-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .api-info { display: flex; align-items: center; gap: 15px; }
-        .api-icon { font-size: 32px; }
-        .api-name { font-size: 18px; font-weight: bold; color: #1e293b; }
-        .api-status { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
-        .api-status.active { background: #d1fae5; color: #065f46; }
-        .api-status.warning { background: #fef3c7; color: #92400e; }
-        .api-status.error { background: #fee2e2; color: #991b1b; }
-        .api-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
-        .detail-item { padding: 12px; background: #f8fafc; border-radius: 8px; }
-        .detail-label { font-size: 12px; color: #64748b; margin-bottom: 5px; }
-        .detail-value { font-size: 16px; font-weight: 600; color: #374151; }
-        .api-actions { display: flex; gap: 10px; }
-        .action-btn { padding: 8px 16px; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; transition: all 0.3s; }
-        .action-btn.primary { background: #1296db; color: white; }
-        .action-btn.secondary { background: #f3f4f6; color: #374151; }
-        .action-btn.danger { background: #fee2e2; color: #991b1b; }
-    </style>
+    <title>API 密钥 - Qorex</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo"><span>🚀</span><span>Qore-X</span></div>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <a href="dashboard.html" class="app-logo">
+                    <span class="logo-icon-sm">🚀</span>
+                    <span>Qorex</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item">📊 首页</a>
+                    <a href="bills.html" class="nav-item">💰 收益</a>
+                    <a href="trades.html" class="nav-item">📈 交易</a>
+                    <a href="profile.html" class="nav-item">👤 我的</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn">🔔</button>
+                <div class="user-menu">
+                    <div class="user-avatar">D</div>
+                    <span>demo@qorex.com</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h1 class="page-title">API 密钥管理</h1>
+                <p class="page-subtitle">管理您的交易所 API 密钥，安全加密存储</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header">
+                    <h3 class="card-title">⚠️ 安全提示</h3>
+                </div>
+                <div style="color: var(--text-gray); line-height: 1.8;">
+                    <p>• 所有 API 密钥均使用 AES-256-GCM 加密存储</p>
+                    <p>• 主密钥保存在环境变量中，不会泄露</p>
+                    <p>• 建议为每个交易所创建独立的 API Key，仅开启交易权限</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="table-header">
+                    <h3 class="table-title">已配置的 API 密钥</h3>
+                    <button class="btn btn-primary btn-sm">
+                        <span>➕</span> 添加密钥
+                    </button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>交易所</th>
+                            <th>API Key</th>
+                            <th>权限</th>
+                            <th>状态</th>
+                            <th>最后使用</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>OKX</strong></td>
+                            <td>bm***xyz123</td>
+                            <td>交易、读取</td>
+                            <td><span class="status-badge active">正常</span></td>
+                            <td>2026-04-08 06:00</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline">编辑</button>
+                                <button class="btn btn-sm btn-danger">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Binance</strong></td>
+                            <td>ak***abc789</td>
+                            <td>交易、读取</td>
+                            <td><span class="status-badge active">正常</span></td>
+                            <td>2026-04-07 22:30</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline">编辑</button>
+                                <button class="btn btn-sm btn-danger">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
     </div>
-    <div class="container">
-        <div class="page-header">
-            <div class="page-title">🔑 API Key 管理</div>
-            <button class="add-btn" onclick="addApiKey()">➕ 添加交易所 API</button>
-        </div>
-        <div class="api-card">
-            <div class="api-header">
-                <div class="api-info">
-                    <div class="api-icon">🟡</div>
-                    <div class="api-name">Binance</div>
-                </div>
-                <div class="api-status active">✅ 正常</div>
-            </div>
-            <div class="api-details">
-                <div class="detail-item"><div class="detail-label">API Key</div><div class="detail-value">bn***xyz123</div></div>
-                <div class="detail-item"><div class="detail-label">余额</div><div class="detail-value">5,000 USDT</div></div>
-                <div class="detail-item"><div class="detail-label">最后验证</div><div class="detail-value">5 分钟前</div></div>
-            </div>
-            <div class="api-actions">
-                <button class="action-btn primary">✏️ 编辑</button>
-                <button class="action-btn secondary">🔄 验证</button>
-                <button class="action-btn danger">🗑️ 删除</button>
-            </div>
-        </div>
-        <div class="api-card warning">
-            <div class="api-header">
-                <div class="api-info">
-                    <div class="api-icon">🔵</div>
-                    <div class="api-name">OKX</div>
-                </div>
-                <div class="api-status warning">⚠️ 无权限</div>
-            </div>
-            <div class="api-details">
-                <div class="detail-item"><div class="detail-label">API Key</div><div class="detail-value">ok***abc456</div></div>
-                <div class="detail-item"><div class="detail-label">余额</div><div class="detail-value">0 USDT</div></div>
-                <div class="detail-item"><div class="detail-label">最后验证</div><div class="detail-value">1 小时前</div></div>
-            </div>
-            <div class="api-actions">
-                <button class="action-btn primary">✏️ 编辑</button>
-                <button class="action-btn secondary">🔄 验证</button>
-                <button class="action-btn danger">🗑️ 删除</button>
-            </div>
-        </div>
-        <div class="api-card error">
-            <div class="api-header">
-                <div class="api-info">
-                    <div class="api-icon">🟢</div>
-                    <div class="api-name">Bybit</div>
-                </div>
-                <div class="api-status error">❌ 错误</div>
-            </div>
-            <div class="api-details">
-                <div class="detail-item"><div class="detail-label">API Key</div><div class="detail-value">by***def789</div></div>
-                <div class="detail-item"><div class="detail-label">余额</div><div class="detail-value">- USDT</div></div>
-                <div class="detail-item"><div class="detail-label">最后验证</div><div class="detail-value">刚刚</div></div>
-            </div>
-            <div class="api-actions">
-                <button class="action-btn primary">✏️ 编辑</button>
-                <button class="action-btn secondary">🔄 验证</button>
-                <button class="action-btn danger">🗑️ 删除</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        function addApiKey() { alert('打开添加 API 对话框\n\n选择交易所 → 输入 API Key/Secret → 验证 → 保存'); }
-    </script>
 </body>
 </html>

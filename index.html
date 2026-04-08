@@ -4,117 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qorex - 登录</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-            background: linear-gradient(180deg, #6B73FF 0%, #000DFF 100%); 
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px 20px;
-        }
-        .logo { 
-            text-align: center; 
-            margin-bottom: 40px; 
-            color: white;
-        }
-        .logo h1 { 
-            font-size: 2.5em; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 12px;
-        }
-        .logo .rocket { font-size: 1.2em; }
-        .login-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px 24px;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-        }
-        .login-card h2 {
-            color: #333;
-            font-size: 1.8em;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-        .input-group {
-            margin-bottom: 20px;
-        }
-        .input-group label {
-            display: block;
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 8px;
-        }
-        .input-group input {
-            width: 100%;
-            padding: 14px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 1em;
-            transition: border-color 0.2s;
-        }
-        .input-group input:focus {
-            outline: none;
-            border-color: #6B73FF;
-        }
-        .login-btn {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(107, 115, 255, 0.4);
-        }
-        .links {
-            margin-top: 24px;
-            text-align: center;
-        }
-        .links a {
-            color: #6B73FF;
-            text-decoration: none;
-            font-size: 0.95em;
-            margin: 0 12px;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="logo">
-        <h1><span class="rocket">🚀</span> Qorex</h1>
-    </div>
-    
-    <div class="login-card">
-        <h2>欢迎回来</h2>
-        <form action="dashboard.html">
-            <div class="input-group">
-                <label>邮箱 / 手机号</label>
-                <input type="text" placeholder="请输入邮箱或手机号" value="demo@qorex.com">
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-logo">
+            <div class="logo-icon">🚀</div>
+            <h1>Qorex</h1>
+            <p>智能量化交易平台</p>
+        </div>
+        
+        <div class="login-card">
+            <h2>欢迎回来</h2>
+            <form action="dashboard.html">
+                <div class="input-group">
+                    <label>邮箱 / 手机号</label>
+                    <input type="text" placeholder="请输入邮箱或手机号" value="demo@qorex.com">
+                </div>
+                <div class="input-group">
+                    <label>密码</label>
+                    <input type="password" placeholder="请输入密码" value="123456">
+                </div>
+                <div class="login-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked> 记住我
+                    </label>
+                    <a href="verify.html">忘记密码？</a>
+                </div>
+                <button type="submit" class="btn-primary btn-block">登录</button>
+            </form>
+            <div class="login-footer">
+                <p>还没有账号？<a href="register.html">立即注册</a></p>
             </div>
-            <div class="input-group">
-                <label>密码</label>
-                <input type="password" placeholder="请输入密码" value="123456">
+        </div>
+        
+        <div class="login-features">
+            <div class="feature">
+                <span class="feature-icon">📊</span>
+                <span>专业量化策略</span>
             </div>
-            <button type="submit" class="login-btn">登录</button>
-        </form>
-        <div class="links">
-            <a href="register.html">注册新账号</a>
-            <a href="verify.html">忘记密码？</a>
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
+                <span>资金安全保障</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">⚡</span>
+                <span>实时交易执行</span>
+            </div>
         </div>
     </div>
 </body>

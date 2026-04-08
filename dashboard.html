@@ -3,109 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qore-X - 首页</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Microsoft YaHei', sans-serif; background: #f8fafc; min-height: 100vh; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 10px; color: white; font-size: 20px; font-weight: bold; }
-        .user-menu { display: flex; align-items: center; gap: 15px; color: white; }
-        .nav { background: white; padding: 15px 20px; display: flex; gap: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav-item { padding: 10px 20px; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
-        .nav-item.active { background: #1296db; color: white; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .stat-card { background: white; border-radius: 16px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .stat-icon { font-size: 32px; margin-bottom: 10px; }
-        .stat-label { font-size: 14px; color: #64748b; margin-bottom: 5px; }
-        .stat-value { font-size: 28px; font-weight: bold; color: #1e293b; }
-        .stat-change { font-size: 14px; margin-top: 5px; }
-        .stat-change.positive { color: #10b981; }
-        .stat-change.negative { color: #ef4444; }
-        .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
-        .card { background: white; border-radius: 16px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .card-title { font-size: 18px; font-weight: bold; color: #1e293b; margin-bottom: 20px; }
-        .exchange-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .exchange-item { padding: 15px; background: #f8fafc; border-radius: 12px; text-align: center; }
-        .exchange-icon { font-size: 24px; margin-bottom: 8px; }
-        .exchange-name { font-size: 14px; font-weight: 600; color: #374151; margin-bottom: 5px; }
-        .exchange-balance { font-size: 16px; font-weight: bold; color: #1296db; }
-        .quick-actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; }
-        .action-btn { padding: 15px; border: none; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
-        .action-btn.primary { background: linear-gradient(135deg, #1296db 0%, #0f7fb8 100%); color: white; }
-        .action-btn.secondary { background: #f3f4f6; color: #374151; }
-        .action-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    </style>
+    <title>仪表盘 - Qorex</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo"><span>🚀</span><span>Qore-X</span></div>
-        <div class="user-menu"><span>🔔</span><span>👤 demo@qorex.com</span></div>
-    </div>
-    <div class="nav">
-        <div class="nav-item active">📊 首页</div>
-        <div class="nav-item">💰 收益</div>
-        <div class="nav-item">📝 交易</div>
-        <div class="nav-item">👤 我的</div>
-    </div>
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon">💵</div>
-                <div class="stat-label">总资产 (USDT)</div>
-                <div class="stat-value">12,345.67</div>
-                <div class="stat-change positive">↑ +234.56 (+1.93%) 今日</div>
+    <div class="app-container">
+        <!-- 顶部导航 -->
+        <header class="app-header">
+            <div class="header-left">
+                <a href="dashboard.html" class="app-logo">
+                    <span class="logo-icon-sm">🚀</span>
+                    <span>Qorex</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="dashboard.html" class="nav-item active">📊 首页</a>
+                    <a href="bills.html" class="nav-item">💰 收益</a>
+                    <a href="trades.html" class="nav-item">📈 交易</a>
+                    <a href="profile.html" class="nav-item">👤 我的</a>
+                </nav>
             </div>
-            <div class="stat-card">
-                <div class="stat-icon">📈</div>
-                <div class="stat-label">累计收益</div>
-                <div class="stat-value">1,567.89</div>
-                <div class="stat-change positive">↑ +15.2% 本月</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">📊</div>
-                <div class="stat-label">持仓盈亏</div>
-                <div class="stat-value">+456.78</div>
-                <div class="stat-change positive">↑ +3.8% 未实现</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">🏆</div>
-                <div class="stat-label">胜率</div>
-                <div class="stat-value">73.5%</div>
-                <div class="stat-change positive">↑ +2.1% 本周</div>
-            </div>
-        </div>
-        <div class="content-grid">
-            <div class="card">
-                <div class="card-title">🏦 交易所分布</div>
-                <div class="exchange-list">
-                    <div class="exchange-item"><div class="exchange-icon">🟡</div><div class="exchange-name">Binance</div><div class="exchange-balance">5,000 USDT</div></div>
-                    <div class="exchange-item"><div class="exchange-icon">🔵</div><div class="exchange-name">OKX</div><div class="exchange-balance">4,500 USDT</div></div>
-                    <div class="exchange-item"><div class="exchange-icon">🟢</div><div class="exchange-name">Bybit</div><div class="exchange-balance">2,845.67 USDT</div></div>
-                </div>
-                <div class="quick-actions">
-                    <button class="action-btn primary">➕ 添加 API</button>
-                    <button class="action-btn secondary">🔄 刷新资产</button>
+            <div class="header-right">
+                <button class="icon-btn">🔔</button>
+                <div class="user-menu">
+                    <div class="user-avatar">D</div>
+                    <span>demo@qorex.com</span>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-title">⚡ 快捷操作</div>
-                <div class="quick-actions" style="grid-template-columns: 1fr;">
-                    <button class="action-btn primary">📊 查看交易记录</button>
-                    <button class="action-btn secondary">💰 充值</button>
-                    <button class="action-btn secondary">💸 提现</button>
-                    <button class="action-btn secondary">⚙️ 设置</button>
+        </header>
+
+        <!-- 主内容 -->
+        <main class="app-main">
+            <div class="page-header">
+                <h1 class="page-title">仪表盘</h1>
+                <p class="page-subtitle">欢迎回来，查看您的资产和收益概况</p>
+            </div>
+
+            <!-- 核心指标 -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>总资产 (USDT)</span>
+                        <span class="metric-icon">💵</span>
+                    </div>
+                    <div class="metric-value">12,345.67</div>
+                    <div class="metric-change positive">
+                        ↑ +234.56 (+1.93%) 今日
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>累计收益</span>
+                        <span class="metric-icon">📊</span>
+                    </div>
+                    <div class="metric-value">1,567.89</div>
+                    <div class="metric-change positive">
+                        ↑ +15.2% 本月
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>持仓盈亏</span>
+                        <span class="metric-icon">📈</span>
+                    </div>
+                    <div class="metric-value">+892.34</div>
+                    <div class="metric-change positive">
+                        ↑ +7.8% 持仓
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>可用余额</span>
+                        <span class="metric-icon">💳</span>
+                    </div>
+                    <div class="metric-value">3,456.78</div>
+                    <div class="metric-change neutral">
+                        可随时提现
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <!-- 持仓概览 -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3 class="table-title">持仓概览</h3>
+                    <button class="btn btn-primary btn-sm">
+                        <span>💰</span> 充值
+                    </button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>资产</th>
+                            <th>持有数量</th>
+                            <th>当前价格</th>
+                            <th>价值 (USDT)</th>
+                            <th>24h 涨跌</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>BTC</strong></td>
+                            <td>0.125</td>
+                            <td>$42,356.78</td>
+                            <td>$5,294.60</td>
+                            <td class="positive">+2.4%</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline">交易</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>ETH</strong></td>
+                            <td>2.5</td>
+                            <td>$2,234.56</td>
+                            <td>$5,586.40</td>
+                            <td class="positive">+3.1%</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline">交易</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>USDT</strong></td>
+                            <td>1,464.67</td>
+                            <td>$1.00</td>
+                            <td>$1,464.67</td>
+                            <td class="neutral">0.0%</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline">提现</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
     </div>
-    <script>
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', () => {
-                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>
